@@ -1,0 +1,22 @@
+{
+  "name": "sis",
+  "version": "0.0.1",
+  "description": "description",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-connect": "~2.2.0",
+    "gulp-uglify": "~1.1.0",
+    "gulp-concat": "~2.4.3",
+    "gulp": "~3.8.10",
+    "gulp-csso": "~1.0.0",
+    "gulp-jade": "~0.11.0",
+    "gulp-sass": "~1.3.2",
+    "gulp-coffee": "~2.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergey Zhitenev",
+  "license": "MIT"
+}

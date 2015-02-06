@@ -1,0 +1,105 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none; }
+
+html {
+  height: 101%; }
+
+/* always display scrollbars */
+body {
+  font-size: 62.5%;
+  line-height: 1;
+  font-family: Arial, Tahoma, Verdana, sans-serif; }
+
+body {
+  height: 100%; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+strong {
+  font-weight: bold; }
+
+input {
+  outline: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  border: 0;
+  max-width: 100%; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf); }
+
+@font-face {
+  font-family: "RobotoCondensed-Bold";
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf); }
+
+#map {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+
+.panel {
+  height: 2rem;
+  background: url(../images/bg-panel.png) repeat-x;
+  width: 100%;
+  position: fixed;
+  z-index: 2; }
+  .panel .holder-time {
+    width: 10rem;
+    padding: .525rem .6875rem 0;
+    background: rgba(0, 0, 0, 0.1); }
+    .panel .holder-time span {
+      float: left;
+      font-family: "RobotoCondensed-Bold";
+      color: #fff;
+      font-size: 1rem;
+      text-shadow: #2d2f32 .0625rem .0625rem .0625rem; }
+    .panel .holder-time .separator {
+      margin: .375rem .625rem;
+      float: left; }
+
+.menu-md-btn {
+  height: 3.75rem;
+  width: 4rem;
+  background: url(../images/menu-md-btn.png) 50% 50% no-repeat #b5b8c2;
+  border-bottom: .25rem solid #868991; }
+
+.menu-md-btn:hover {
+  background: url(../images/menu-md-btn-hover.png) 50% 50% no-repeat #009EED;
+  border-bottom: .25rem solid #fff; }
