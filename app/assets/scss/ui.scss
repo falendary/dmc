@@ -1,0 +1,70 @@
+.menu-md-btn
+{
+	height: 3.75rem;
+	width: 4rem;
+	background: url(../images/menu-md-btn.png) 50% 50% no-repeat #b5b8c2;
+	border-bottom: .25rem solid #868991;
+}
+.menu-md-btn:hover
+{
+	background: url(../images/menu-md-btn-hover.png) 50% 50% no-repeat #009EED;
+	border-bottom: .25rem solid #fff;
+}
+.close-new
+{
+	display: block;
+	height: 1.375rem;
+	width: 1.375rem;
+	text-align: center;
+	line-height: 1.2rem;
+	box-sizing: border-box;
+	padding: .0625rem;
+	font-size: 1rem;
+	color: #2e3034;
+	font-weight: bold;
+}
+.close-new:hover
+{
+	text-decoration: none;
+	padding: 0;
+	border: .0625rem solid #d7d8da;
+}
+.order
+{
+	width: .5rem;
+	height: .25rem;
+	position: absolute;
+	background: url(../images/order.png) no-repeat;
+}
+.order.active
+{
+	background: url(../images/order-desc.png) no-repeat;	
+}
+table
+{
+	tbody
+	{
+		tr
+		{
+		width: 100%;
+		height: 1.25rem;
+		background: #f7f7f8;
+			td
+			{
+
+			}
+		}
+		tr:nth-child(2n+1)
+		{
+			background: #efeff0;
+		}
+		tr:hover
+		{
+			background: #898c94;
+			td
+			{
+				color: #fff;
+			}
+		}
+	}
+}
