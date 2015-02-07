@@ -210,14 +210,22 @@ function init(){
 
 					obj.center[0] = parseFloat(obj.center[0]);
 					obj.center[1] = parseFloat(obj.center[1]);
+<<<<<<< HEAD
 					var myPlacemark = new ymaps.Placemark(obj.center, 
 					{
+=======
+					var myPlacemark = new ymaps.Placemark(obj.center, {
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 						balloonContent: ball,
 						iconContent:"<div id='i"+obj.id+"' class='icon-content "+(obj.post == "new" ? "new-icon" : "")+"'>"+
 										"<img src='"+obj.icon.src+"' alt=' ' />"+
 										"<img src='"+obj.icon.srcHover+"' alt=' ' />"+
+<<<<<<< HEAD
 										"<img class='active' src='"+obj.icon.src+"' alt=''/>"+
 										"<img class='active' src='"+obj.icon.srcActive+"' alt=''/>"+
+=======
+										"<img class='active' src='"+obj.icon.srcActive+"' alt=' ' />"+
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 										"<div>"+
 											"<img src='"+obj.icon.newSrc+"' alt=' ' />"+
 											"<img src='"+obj.icon.newSrcHover+"' alt=' ' />"+
@@ -257,6 +265,10 @@ function init(){
 			});
 
 			createMessages(mapBalloons);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 			clusterer.add(arr);
 			myMap.geoObjects.add(clusterer);
 
@@ -587,7 +599,11 @@ function init(){
             var box = hold.find('> .holder-list');
             var locationInput = $('#locationName');
 			var myPlacemark;
+<<<<<<< HEAD
 			var map2X = $('input.map-x');
+=======
+			var map2X = $('input.map2-x');
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 			var map2Y = $('input.map2-y');
 
             locationInput.on('input', function(e) {

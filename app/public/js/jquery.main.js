@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var init, order;
 
 jQuery(document).ready(function() {
@@ -52,25 +53,88 @@ init = function() {
     'yellow': [
       {
         href: 'images/cluster_yellow.png',
+=======
+var init;
+
+jQuery(document).ready(function() {
+  return init();
+});
+
+init = function() {
+  var customClusterIcons, sformXHR, stopTime;
+  stopTime = sformXHR = ymaps.ready(function() {
+    var clusterer, myMap;
+    myMap = new ymaps.Map("map", {
+      center: [65.639419, 103.054514],
+      type: 'yandex#map',
+      zoom: 10,
+      controls: [],
+      behaviors: ['default', 'scrollZoom']
+    });
+    clusterer = new ymaps.Clusterer({
+      preset: 'twirl#redClusterIcons',
+      clusterNumbers: [10000],
+      clusterHideIconOnBalloonOpen: false,
+      geoObjectHideIconOnBalloonOpen: false,
+      gridSize: 150,
+      zoomMargin: [170, 80, 30, 80],
+      maxZoom: 17
+    });
+    return clusterer.createCluster(function(center, geoObjects) {
+      var clusterPlacemark, geoObjectsAll, i, type, _i, _len;
+      clusterPlacemark = ymaps.Clusterer.prototype.createCluster.call(this, center, geoObjects);
+      geoObjectsAll = clusterPlacemark.getGeoObjects();
+      type = '';
+      for (_i = 0, _len = geoObjectsAll.length; _i < _len; _i++) {
+        i = geoObjectsAll[_i];
+        if (type !== 'red') {
+          if (type !== 'orange') {
+            type = geoObjectsAll[i].scale;
+          }
+        } else {
+          if (geoObjectsAll[i].scale === 'red') {
+            type = 'red';
+          }
+        }
+      }
+      clusterPlacemark.options.set('clusterIconIcons', customClusterIcons[type]);
+      return clusterPlacemark;
+    });
+  });
+  customClusterIcons = {
+    'yellow': [
+      {
+        href: 'uploaded/mapicons/cluster_yellow.png',
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
         size: [74, 74],
         offset: [-37, -37]
       }
     ],
     'orange': [
       {
+<<<<<<< HEAD
         href: 'images/cluster_orange.png',
+=======
+        href: 'uploaded/mapicons/cluster_orange.png',
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
         size: [74, 74],
         offset: [-37, -37]
       }
     ],
     'red': [
       {
+<<<<<<< HEAD
         href: 'images/cluster_red.png',
         size: [74, 101],
+=======
+        href: 'uploaded/mapicons/cluster_red.png',
+        size: [74, 74],
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
         offset: [-37, -37]
       }
     ]
   };
+<<<<<<< HEAD
   sformXHR = $.ajax({
     type: 'GET',
     dataType: 'json',
@@ -82,6 +146,27 @@ init = function() {
       arr = [];
       mapBalloons = msg;
       createIcons();
+=======
+  if (stopTime) {
+    clearTimeout(stopTime);
+  }
+  if (sformXHR) {
+    sformXHR.abort();
+  }
+  sformXHR = $.ajax({
+    type: 'POST',
+    data: form.serialize(),
+    dataType: 'json',
+    url: 'inc/data.json',
+    success: function(msg) {
+      var arr, mapBalloons;
+      $.each(arr, function(i, obj) {
+        return myMap.geoObjects.remove(obj);
+      });
+      arr = [];
+      mapBalloons = msg;
+      return createIcons();
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
     },
     error: function(jqHXR, status, errorThrown) {
       if ('abort' !== status) {
@@ -89,6 +174,7 @@ init = function() {
       }
     }
   });
+<<<<<<< HEAD
   createIcons = function() {
     clusterer.removeAll();
     jQuery.each(mapBalloons, function(i, obj) {
@@ -162,5 +248,42 @@ order = function() {
   return jQuery('.order').bind('click', function() {
     jQuery(this).toggleClass('active');
     jQuery('.nearhospitals tbody').append(jQuery('.nearhospitals tr').get().reverse());
+=======
+  setInterval(function() {
+    if (stopTime) {
+      clearTimeout(stopTime);
+    }
+    if (sformXHR) {
+      sformXHR.abort();
+    }
+    return sformXHR = $.ajax({
+      type: 'POST',
+      data: form.serialize(),
+      dataType: 'json',
+      url: 'inc/data.json',
+      success: function(msg) {
+        var arr, mapBalloons;
+        $.each(arr, function(i, obj) {
+          return myMap.geoObjects.remove(obj);
+        });
+        arr = [];
+        mapBalloons = msg;
+        return createIcons();
+      },
+      error: function(jqHXR, status, errorThrown) {
+        if ('abort' !== status) {
+          return console.warn('Server is unavailable. Refresh the page within 15 seconds. ' + status + ' ' + errorThrown);
+        }
+      }
+    });
+  }, 1000);
+  return createIcons()(function() {
+    list.empty();
+    clusterer.removeAll();
+    createMessages(mapBalloons);
+    clusterer.add(arr);
+    console.log(clusterer);
+    return myMap.geoObjects.add(clusterer);
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
   });
 };

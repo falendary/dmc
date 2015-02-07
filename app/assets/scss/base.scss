@@ -22,7 +22,11 @@ strong { font-weight: bold; }
 input { outline: none; }
  
 table { border-collapse: collapse; border-spacing: 0; }
+<<<<<<< HEAD
 img { border: 0; }
+=======
+img { border: 0; max-width: 100%; }
+>>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
  
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
