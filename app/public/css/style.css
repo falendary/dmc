@@ -43,12 +43,7 @@ table {
   border-spacing: 0; }
 
 img {
-<<<<<<< HEAD
   border: 0; }
-=======
-  border: 0;
-  max-width: 100%; }
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 
 a {
   text-decoration: none; }
@@ -62,7 +57,6 @@ a:hover {
 .pull-right {
   float: right; }
 
-<<<<<<< HEAD
 .bottompanel {
   border-top: 1rem solid #c9cbd0;
   border-bottom: .75rem solid #303235;
@@ -159,14 +153,11 @@ a:hover {
               color: #fff;
               text-decoration: underline; }
 
-=======
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 @font-face {
   font-family: "Ubuntu-Regular";
   src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf); }
 
 @font-face {
-<<<<<<< HEAD
   font-family: "Ubuntu-Light";
   src: url(../fonts/Ubuntu/Ubuntu-Light.ttf); }
 
@@ -175,8 +166,6 @@ a:hover {
   src: url(../fonts/Ubuntu/Ubuntu-Bold.ttf); }
 
 @font-face {
-=======
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
   font-family: "RobotoCondensed-Bold";
   src: url(../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf); }
 
@@ -187,7 +176,6 @@ a:hover {
   width: 100%;
   height: 100%;
   z-index: 1; }
-<<<<<<< HEAD
   #map .ymaps-2-1-17-hint__text {
     background: none; }
   #map .icon-content {
@@ -347,34 +335,21 @@ a:hover {
         margin: 0; }
 
 .toppanel {
-=======
-
-.panel {
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
   height: 2rem;
   background: url(../images/bg-panel.png) repeat-x;
   width: 100%;
   position: fixed;
   z-index: 2; }
-<<<<<<< HEAD
   .toppanel .holder-time {
     width: 10rem;
     padding: .525rem .6875rem 0;
     background: rgba(0, 0, 0, 0.1); }
     .toppanel .holder-time span {
-=======
-  .panel .holder-time {
-    width: 10rem;
-    padding: .525rem .6875rem 0;
-    background: rgba(0, 0, 0, 0.1); }
-    .panel .holder-time span {
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
       float: left;
       font-family: "RobotoCondensed-Bold";
       color: #fff;
       font-size: 1rem;
       text-shadow: #2d2f32 .0625rem .0625rem .0625rem; }
-<<<<<<< HEAD
     .toppanel .holder-time .separator {
       margin: .375rem .625rem;
       float: left; }
@@ -464,11 +439,6 @@ a:hover {
       background: none;
       border: none;
       padding: .25rem 0 0 0; }
-=======
-    .panel .holder-time .separator {
-      margin: .375rem .625rem;
-      float: left; }
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
 
 .menu-md-btn {
   height: 3.75rem;
@@ -479,7 +449,6 @@ a:hover {
 .menu-md-btn:hover {
   background: url(../images/menu-md-btn-hover.png) 50% 50% no-repeat #009EED;
   border-bottom: .25rem solid #fff; }
-<<<<<<< HEAD
 
 .close-new {
   display: block;
@@ -517,5 +486,3 @@ table tbody tr:hover {
   background: #898c94; }
   table tbody tr:hover td {
     color: #fff; }
-=======
->>>>>>> 0b4984b58677e0992393756ee1a06e5d9f6389eb
