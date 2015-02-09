@@ -72,7 +72,7 @@ gulp.task('build', function() {
 
     gulp.src('./app/assets/scss/**/*.scss')
         .pipe(sass()) // преобразуем sass в css
-    .pipe(concat('styles.css')) // склеиванием css
+    .pipe(concat('style.css')) // склеиванием css
     // .pipe(csso()) // минимизируем css
     .pipe(gulp.dest('./app/build/css/')) // записываем css
 
@@ -86,7 +86,7 @@ gulp.task('build', function() {
 
     // js
 
-    gulp.src(['./app/assets/js/**/*.coffee', './app/assets/js/libs/**/*.js'])
+    gulp.src(['./app/assets/js/**/*.coffee', '!./app/assets/js/libs/**/*.js'])
         .pipe(coffee({bare: true}))
         // .pipe(uglify())
         .pipe(gulp.dest('./app/build/js'));
