@@ -36,6 +36,16 @@
 	position: absolute;
 	background: url(../images/order.png) no-repeat;
 }
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{
+	background: #ddd;
+	border: 1px solid #ddd;
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+{
+	background: #ddd;
+	border: 1px solid #ddd;
+}
 .order.active
 {
 	background: url(../images/order-desc.png) no-repeat;	

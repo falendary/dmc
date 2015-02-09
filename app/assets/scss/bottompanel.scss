@@ -22,7 +22,7 @@
 			margin: 0 auto;
 			.placeinfo
 			{
-				margin: .5rem 2.5rem 0 0;
+				margin: .5rem 2.5rem 0 2%;
 				float: left;
 				.row
 				{
@@ -76,7 +76,8 @@
 				float: left;
 				height: 100%;
 				background: #fff;
-				width: 72.246753247%;
+				width: 45.246753247%;
+				margin: 0 10% 0 0;
 				.nearhospitals
 				{
 					.head
@@ -102,6 +103,7 @@
 					padding: .5rem;
 					.body
 					{
+						height: 10rem;
 						table
 						{
 							font-family: "Ubuntu-Regular";
@@ -121,8 +123,8 @@
 								td:last-child
 								{
 									width: 4.5rem;
-									text-align: right;
-									padding: .25rem .5rem 0 0;
+									// text-align: right;
+									// padding: .25rem .5rem 0 0;
 								}
 								td.hasroad
 								{
@@ -139,6 +141,13 @@
 								td.far
 								{
 									background: #efc2be;
+								}
+							}
+							tr.header
+							{
+								td
+								{
+									padding: .25rem 0 0 1rem;
 								}
 							}
 							tr:hover
