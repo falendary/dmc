@@ -1,0 +1,131 @@
+.panel-top
+{
+    height: 1.875rem;
+    border-bottom: 1px solid #dcdee3;
+    box-shadow: 0 1px 0 #bfc0c4;
+    background: #ebedf2;    
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    .holder-time
+    {
+        padding: .425rem 0.625rem 0;
+        margin-right: 4.375rem;
+        span
+        {
+            float: left;
+            font-family: "RobotoCondensed-Bold";
+            color: #fff;
+            font-size: 1rem;
+            text-shadow: #2d2f32 .0625rem .0625rem .0625rem;
+        }
+        .separator
+        {
+            margin: .375rem .625rem;
+            float: left;
+        }
+    }
+    .nav
+    {
+        float: left;
+        li
+        {
+            float: left;
+            // width: 7.5rem;
+            // height: 1.85rem;
+            height: 2rem;
+            text-align: left;
+            box-sizing: border-box;
+            margin: 0 2rem 0 0;
+            position: relative;
+            top: -1px;
+            border-bottom: 1px solid #bbbfc9;
+            a
+            {
+                padding: .45rem .5rem .5rem .5rem;
+                color: #9ea2aa;
+                font-family: "Ubuntu-Bold";
+                font-size: .9rem;
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: relative;
+                background-color: transparent;
+                box-sizing: border-box;
+                font-weight: normal;
+            }
+            &:hover
+            {
+                border-bottom: .125rem solid #00aaff;
+                a
+                {
+                    padding-top: .4375rem;
+                    color: #2e3033;
+                    text-decoration: none;
+                }
+            }
+            &.active
+            {
+                a
+                {
+                    background-color: #c8210e;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+            &.search
+            {
+                width: 26.5625rem;
+                margin: 0;
+                form::before
+                {
+                    content: '[';
+                    position: absolute;
+                    left: 0;
+                    font-weight: 100;
+                    color: #9ea2aa;
+                    font-family: "Ubuntu-Regular";
+                    font-size: .9rem;
+                    font-family: "Ubuntu-Light";
+                    top: .25rem;
+                }
+                form
+                {
+                    width: 100%;
+                    position: relative;
+                    height: 100%;
+                }
+                form::after
+                {
+                    position: absolute;
+                    right: 0;
+                    content: ']';
+                    color: #9ea2aa;
+                    top: .25rem;
+                    font-family: "Ubuntu-Regular";
+                    font-size: .9rem;
+                    font-weight: normal;
+                    font-family: "Ubuntu-Light";
+                }
+                input
+                {
+                    background: none;
+                    border: 0;
+                    width: 100%;
+                    color: #9ea2aa;
+                    font-size: .9rem;
+                    padding: .18rem 0 0 .5rem;
+                    position: relative;
+                    display: block;
+                }
+            }
+            &.search:hover
+            {
+                background: none;
+                border: none;
+                padding: .25rem 0 0 0;
+            }
+        }
+        
+    }
+}

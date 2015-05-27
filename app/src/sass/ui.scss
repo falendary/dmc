@@ -1,0 +1,299 @@
+// Классы-утилиты для размера шрифта px
+.font-size-12{font-size: .75rem;}
+.font-size-14{font-size: .875rem;}
+.font-size-16{font-size: 1rem;}
+.font-size-18{font-size: 1.125rem;}
+.font-size-20{font-size: 1.25rem;}
+.font-size-22{font-size: 1.375rem;}
+.font-size-24{font-size: 1.5rem;}
+.font-size-26{font-size: 1.625rem;}
+.font-size-28{font-size: 1.75rem;}
+.font-size-30{font-size: 1.875rem;}
+.font-size-32{font-size: 2rem;}
+.font-size-34{font-size: 2.125rem;}
+.font-size-36{font-size: 2.25rem;}
+.font-size-38{font-size: 2.375rem;}
+.font-size-40{font-size: 2.5rem;}
+
+// Классы-утилиты для margin-top px
+.m-top-12{margin-top: .75rem;}
+.m-top-14{margin-top: .875rem;}
+.m-top-16{margin-top: 1rem;}
+.m-top-18{margin-top: 1.125rem;}
+.m-top-20{margin-top: 1.25rem;}
+.m-top-22{margin-top: 1.375rem;}
+.m-top-24{margin-top: 1.5rem;}
+.m-top-26{margin-top: 1.625rem;}
+.m-top-28{margin-top: 1.75rem;}
+.m-top-30{margin-top: 1.875rem;}
+.m-top-32{margin-top: 2rem;}
+.m-top-34{margin-top: 2.125rem;}
+.m-top-36{margin-top: 2.25rem;}
+.m-top-38{margin-top: 2.375rem;}
+.m-top-40{margin-top: 2.5rem;}
+
+// Классы-утилиты для margin-left px
+.m-left-12{margin-left: .75rem;}
+.m-left-14{margin-left: .875rem;}
+.m-left-16{margin-left: 1rem;}
+.m-left-18{margin-left: 1.125rem;}
+.m-left-20{margin-left: 1.25rem;}
+.m-left-22{margin-left: 1.375rem;}
+.m-left-24{margin-left: 1.5rem;}
+.m-left-26{margin-left: 1.625rem;}
+.m-left-28{margin-left: 1.75rem;}
+.m-left-30{margin-left: 1.875rem;}
+.m-left-32{margin-left: 2rem;}
+.m-left-34{margin-left: 2.125rem;}
+.m-left-36{margin-left: 2.25rem;}
+.m-left-38{margin-left: 2.375rem;}
+.m-left-40{margin-left: 2.5rem;}
+
+// Классы-утилиты для margin-bottom px
+.m-bottom-12{margin-bottom: .75rem;}
+.m-bottom-14{margin-bottom: .875rem;}
+.m-bottom-16{margin-bottom: 1rem;}
+.m-bottom-18{margin-bottom: 1.125rem;}
+.m-bottom-20{margin-bottom: 1.25rem;}
+.m-bottom-22{margin-bottom: 1.375rem;}
+.m-bottom-24{margin-bottom: 1.5rem;}
+.m-bottom-26{margin-bottom: 1.625rem;}
+.m-bottom-28{margin-bottom: 1.75rem;}
+.m-bottom-30{margin-bottom: 1.875rem;}
+.m-bottom-32{margin-bottom: 2rem;}
+.m-bottom-34{margin-bottom: 2.125rem;}
+.m-bottom-36{margin-bottom: 2.25rem;}
+.m-bottom-38{margin-bottom: 2.375rem;}
+.m-bottom-40{margin-bottom: 2.5rem;}
+
+// Классы-утилиты для margin-right
+.m-right-12{margin-right: .75rem;}
+.m-right-14{margin-right: .875rem;}
+.m-right-16{margin-right: 1rem;}
+.m-right-18{margin-right: 1.125rem;}
+.m-right-20{margin-right: 1.25rem;}
+.m-right-22{margin-right: 1.375rem;}
+.m-right-24{margin-right: 1.5rem;}
+.m-right-26{margin-right: 1.625rem;}
+.m-right-28{margin-right: 1.75rem;}
+.m-right-30{margin-right: 1.875rem;}
+.m-right-32{margin-right: 2rem;}
+.m-right-34{margin-right: 2.125rem;}
+.m-right-36{margin-right: 2.25rem;}
+.m-right-38{margin-right: 2.375rem;}
+.m-right-40{margin-right: 2.5rem;}
+
+.m-null{margin: 0;};
+
+// Кастомизация select2
+
+.select2
+{
+	border-radius: 0;
+	&.select-md
+	{
+		width: 15rem;
+		height: 1.625rem;
+	}
+	&.select2-container
+	{
+		box-shadow: 1px 1px 1px #c2c4c8; 
+		border: 0;
+		.select2-choice
+		{
+			border: 0;
+			border-radius: 0;
+			.select2-arrow
+			{
+				height: 1.2rem;
+				width: 1.2rem;
+				box-shadow: 1px 1px 1px #c2c4c8; 
+				top: .1rem;
+				right: .15rem;
+				border: 0;
+				background: #edf0f2;
+				box-sizing: border-box;
+				b
+				{
+					background-position: 2px -2px;
+				}
+			}
+		}
+	}
+}
+.btn-square-sm
+{
+	width: 1.375rem;
+	height: 1.375rem;
+	padding: 0;
+	box-sizing: border-box;
+	text-align: center;
+	border-radius: 0;
+	border: 1px solid transparent;
+}
+.btn-plus, .btn-minus
+{
+	color: #737880;
+	padding-top: .1rem;
+	display: inline-block;
+	&:hover
+	{
+		color: #2e3034;
+		border: 1px solid #cdd0d5;
+	}
+	&:active
+	{
+		background-color: #2e3034;
+		color: #fff;
+	}
+}
+.btn-square
+{
+	height: 3.75rem;
+	text-align: center;
+	width: 4rem;
+}
+.btn-menu
+{
+	i
+	{
+		line-height: 1.4;
+	}
+}
+.btn-grey
+{
+	background-color: #b7bbc4;
+	color: #3e4149;
+	border-bottom: .25rem solid #868991;
+	&:hover
+	{
+		color: #fff;
+		background-color: #0a9be4;
+		border-bottom: .25rem solid #fff;
+	}
+}
+.map-marker
+{
+	color: #737880;
+	display: block;
+	text-align: center;
+	line-height: 1.5;
+	margin-bottom: 1.375rem;
+	&:hover
+	{
+		color: #e1e4e6;
+		background-color: #737880;
+	}
+}
+.btn-xs-custom
+{
+	width: 1rem;
+	display: block;
+	height: 1rem;
+	background-color: #fff;
+	box-shadow: 0 1px 2px #c3c5c9;
+}
+.menu-md-btn:hover
+{
+	background: url(../images/menu-md-btn-hover.png) 50% 50% no-repeat #009EED;
+	border-bottom: .25rem solid #fff;
+}																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
+.btn-default
+{
+	border-radius: 0;
+	font-family: "Ubuntu-Regular";
+	line-height: 1;
+	width: 6.5rem;
+	height: 2.75rem;
+}
+.btn-default i
+{
+	display: inline-block;
+	margin-left: .5rem;
+}
+.btn-blue
+{
+	color: #fff;
+	background-color: #0a9be4;
+	border: 0;
+	border-bottom: .25rem solid #016ea5;
+	&:hover
+	{
+		background-color: #0aabfc;
+		color: #fff;
+		border-bottom: .25rem solid #017ab7;
+	}
+}
+
+.highlighted
+{
+	border-bottom: .125rem solid #00aaff;
+}
+.close-new
+{
+	display: block;
+	height: 1.375rem;
+	width: 1.375rem;
+	text-align: center;
+	line-height: 1.2rem;
+	box-sizing: border-box;
+	padding: .0625rem;
+	font-size: 1rem;
+	color: #2e3034;
+	font-weight: bold;
+}
+.close-new:hover
+{
+	text-decoration: none;
+	padding: 0;
+	border: .0625rem solid #d7d8da;
+}
+.order
+{
+	width: .5rem;
+	height: .25rem;
+	position: absolute;
+	background: url(../images/order.png) no-repeat;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{
+	background: #ddd;
+	border: 1px solid #ddd;
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+{
+	background: #ddd;
+	border: 1px solid #ddd;
+}
+.order.active
+{
+	background: url(../images/order-desc.png) no-repeat;	
+}
+table
+{
+	tbody
+	{
+		tr
+		{
+		width: 100%;
+		height: 1.25rem;
+		background: #f7f7f8;
+			td
+			{
+
+			}
+		}
+		tr:nth-child(2n+1)
+		{
+			background: #efeff0;
+		}
+		tr:hover
+		{
+			background: #898c94;
+			td
+			{
+				color: #fff;
+			}
+		}
+	}
+}

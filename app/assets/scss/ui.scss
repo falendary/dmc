@@ -36,19 +36,33 @@
 	position: absolute;
 	background: url(../images/order.png) no-repeat;
 }
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
-{
-	background: #ddd;
-	border: 1px solid #ddd;
-}
-.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
-{
-	background: #ddd;
-	border: 1px solid #ddd;
-}
 .order.active
 {
 	background: url(../images/order-desc.png) no-repeat;	
+}
+.nearhospitals
+{
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+	{
+		background: #ddd;
+		border: 1px solid #ddd;
+	}
+}
+.help
+{
+	height: 1.125rem;
+	width: 1.125rem;
+	border: 1px solid #aaacb1;
+	background: none;
+	color: #626670;
+	text-align: center;
+	line-height: 1.2;
+	font-size: 1rem;
+}
+.help:hover
+{
+	background: #cdd0d5;
+	text-decoration: none;
 }
 table
 {

@@ -66,6 +66,8 @@ a:hover {
   bottom: 0;
   width: 100%;
   box-sizing: border-box; }
+  .bottompanel .help {
+    margin: 1rem; }
   .bottompanel .fancypanel {
     border-top: .75rem solid #babcc3;
     border-bottom: .25rem solid #222325;
@@ -77,7 +79,7 @@ a:hover {
       width: 96.25rem;
       margin: 0 auto; }
       .bottompanel .fancypanel .container .placeinfo {
-        margin: .5rem 2.5rem 0 2%;
+        margin: .5rem 0 0 0;
         float: left; }
         .bottompanel .fancypanel .container .placeinfo .row {
           overflow: hidden;
@@ -110,8 +112,7 @@ a:hover {
         float: left;
         height: 100%;
         background: #fff;
-        width: 45.24675%;
-        margin: 0 10% 0 0; }
+        width: 72.24675%; }
         .bottompanel .fancypanel .container .log .nearhospitals {
           padding: .5rem; }
           .bottompanel .fancypanel .container .log .nearhospitals .head {
@@ -122,7 +123,8 @@ a:hover {
               font-size: .9rem;
               font-family: "Ubuntu-Regular"; }
             .bottompanel .fancypanel .container .log .nearhospitals .head p.pull-right {
-              position: relative; }
+              position: relative;
+              margin: 0 1.5rem 0 0; }
               .bottompanel .fancypanel .container .log .nearhospitals .head p.pull-right .order {
                 top: .25rem;
                 left: -1rem; }
@@ -138,7 +140,9 @@ a:hover {
                 .bottompanel .fancypanel .container .log .nearhospitals .body table tr td a {
                   color: #3e4149; }
               .bottompanel .fancypanel .container .log .nearhospitals .body table tr td:last-child {
-                width: 4.5rem; }
+                width: 4.5rem;
+                text-align: right;
+                padding: .25rem .5rem 0 0; }
               .bottompanel .fancypanel .container .log .nearhospitals .body table tr td.hasroad {
                 background: url(../images/has-road.png) no-repeat .25rem .125rem; }
               .bottompanel .fancypanel .container .log .nearhospitals .body table tr td.close {
@@ -147,8 +151,6 @@ a:hover {
                 background: #f3e5b4; }
               .bottompanel .fancypanel .container .log .nearhospitals .body table tr td.far {
                 background: #efc2be; }
-              .bottompanel .fancypanel .container .log .nearhospitals .body table tr.header td {
-                padding: .25rem 0 0 1rem; }
               .bottompanel .fancypanel .container .log .nearhospitals .body table tr:hover td:last-child {
                 background: #6e7177;
                 color: #bbbfc9; }
@@ -337,16 +339,6 @@ a:hover {
       #map .preview .row .item:last-child {
         margin: 0; }
 
-@media only screen and (min-width: 1440px) {
-  .bottompanel .fancypanel .container .log {
-    margin: 0;
-    width: 65%; } }
-
-@media only screen and (min-width: 1281px) and (max-width: 1440px) {
-  .bottompanel .fancypanel .container .log {
-    margin: 0 5% 0 0;
-    width: 54%; } }
-
 .toppanel {
   height: 2rem;
   background: url(../images/bg-panel.png) repeat-x;
@@ -486,16 +478,26 @@ a:hover {
   position: absolute;
   background: url(../images/order.png) no-repeat; }
 
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-  background: #ddd;
-  border: 1px solid #ddd; }
-
-.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-  background: #ddd;
-  border: 1px solid #ddd; }
-
 .order.active {
   background: url(../images/order-desc.png) no-repeat; }
+
+.nearhospitals .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: #ddd;
+  border: 1px solid #ddd; }
+
+.help {
+  height: 1.125rem;
+  width: 1.125rem;
+  border: 1px solid #aaacb1;
+  background: none;
+  color: #626670;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1rem; }
+
+.help:hover {
+  background: #cdd0d5;
+  text-decoration: none; }
 
 table tbody tr {
   width: 100%;

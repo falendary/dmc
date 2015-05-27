@@ -4,7 +4,7 @@ jQuery(document).ready ->
 			init()
 			return
 		)
-	#order()
+	order()
 	jQuery('.nearhospitals .body').mCustomScrollbar()
 	return
 
@@ -151,14 +151,14 @@ init = () ->
 				# Превьюшка при наведении
 				preview = 	'<div class="preview">'+
 							'	<p>'+obj.shortname+'</p>'+
-							'	<div class="row"><div class="item beds">'+obj.bedAlladult+'</div><div class="item beds">'+obj.doctorsAll+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.therapeutic+'</div><div class="item">'+obj.docTherapeutic+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.surgialAdult+'</div><div class="item">'+obj.docSurgial+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.traumaAdult+'</div><div class="item">'+obj.docTraumatolog+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.neurosurgicalAdult+'</div><div class="item">'+obj.docNeurosurgical+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.ambustial+'</div><div class="item">'+obj.docCombustiol+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.tuberculousAdult+'</div><div class="item">'+obj.docPhysia+'</div></div>'+
-							'	<div class="row"><div class="item">'+obj.infectiousAdult+'</div><div class="item">'+obj.docInfectios+'</div></div>'+
+							'	<div class="row"><div class="item beds">'+obj.bedAlladult+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.neurosurgicalAdult+'</div><div class="item">'+obj.therapeutic+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.traumaAdult+'</div><div class="item">'+obj.tuberculousAdult+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.bedAllkid+'</div><div class="item">'+obj.therapeutic+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.surgialAdult+'</div><div class="item">'+obj.ambustial+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.tuberculousAdult+'</div><div class="item">'+obj.infectiousAdult+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.neurosurgicalAdult+'</div><div class="item">'+obj.therapeutic+'</div></div>'+
+							'	<div class="row"><div class="item">'+obj.neurosurgicalAdult+'</div><div class="item">'+obj.therapeutic+'</div></div>'+
 							'</div>'
 
 				obj.center[0] = parseFloat(obj.center[0])
