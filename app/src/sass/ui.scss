@@ -1,126 +1,6 @@
-// Классы-утилиты для размера шрифта px
-.font-size-12{font-size: .75rem;}
-.font-size-14{font-size: .875rem;}
-.font-size-16{font-size: 1rem;}
-.font-size-18{font-size: 1.125rem;}
-.font-size-20{font-size: 1.25rem;}
-.font-size-22{font-size: 1.375rem;}
-.font-size-24{font-size: 1.5rem;}
-.font-size-26{font-size: 1.625rem;}
-.font-size-28{font-size: 1.75rem;}
-.font-size-30{font-size: 1.875rem;}
-.font-size-32{font-size: 2rem;}
-.font-size-34{font-size: 2.125rem;}
-.font-size-36{font-size: 2.25rem;}
-.font-size-38{font-size: 2.375rem;}
-.font-size-40{font-size: 2.5rem;}
-
-// Классы-утилиты для margin-top px
-.m-top-12{margin-top: .75rem;}
-.m-top-14{margin-top: .875rem;}
-.m-top-16{margin-top: 1rem;}
-.m-top-18{margin-top: 1.125rem;}
-.m-top-20{margin-top: 1.25rem;}
-.m-top-22{margin-top: 1.375rem;}
-.m-top-24{margin-top: 1.5rem;}
-.m-top-26{margin-top: 1.625rem;}
-.m-top-28{margin-top: 1.75rem;}
-.m-top-30{margin-top: 1.875rem;}
-.m-top-32{margin-top: 2rem;}
-.m-top-34{margin-top: 2.125rem;}
-.m-top-36{margin-top: 2.25rem;}
-.m-top-38{margin-top: 2.375rem;}
-.m-top-40{margin-top: 2.5rem;}
-
-// Классы-утилиты для margin-left px
-.m-left-12{margin-left: .75rem;}
-.m-left-14{margin-left: .875rem;}
-.m-left-16{margin-left: 1rem;}
-.m-left-18{margin-left: 1.125rem;}
-.m-left-20{margin-left: 1.25rem;}
-.m-left-22{margin-left: 1.375rem;}
-.m-left-24{margin-left: 1.5rem;}
-.m-left-26{margin-left: 1.625rem;}
-.m-left-28{margin-left: 1.75rem;}
-.m-left-30{margin-left: 1.875rem;}
-.m-left-32{margin-left: 2rem;}
-.m-left-34{margin-left: 2.125rem;}
-.m-left-36{margin-left: 2.25rem;}
-.m-left-38{margin-left: 2.375rem;}
-.m-left-40{margin-left: 2.5rem;}
-
-// Классы-утилиты для margin-bottom px
-.m-bottom-12{margin-bottom: .75rem;}
-.m-bottom-14{margin-bottom: .875rem;}
-.m-bottom-16{margin-bottom: 1rem;}
-.m-bottom-18{margin-bottom: 1.125rem;}
-.m-bottom-20{margin-bottom: 1.25rem;}
-.m-bottom-22{margin-bottom: 1.375rem;}
-.m-bottom-24{margin-bottom: 1.5rem;}
-.m-bottom-26{margin-bottom: 1.625rem;}
-.m-bottom-28{margin-bottom: 1.75rem;}
-.m-bottom-30{margin-bottom: 1.875rem;}
-.m-bottom-32{margin-bottom: 2rem;}
-.m-bottom-34{margin-bottom: 2.125rem;}
-.m-bottom-36{margin-bottom: 2.25rem;}
-.m-bottom-38{margin-bottom: 2.375rem;}
-.m-bottom-40{margin-bottom: 2.5rem;}
-
-// Классы-утилиты для margin-right
-.m-right-12{margin-right: .75rem;}
-.m-right-14{margin-right: .875rem;}
-.m-right-16{margin-right: 1rem;}
-.m-right-18{margin-right: 1.125rem;}
-.m-right-20{margin-right: 1.25rem;}
-.m-right-22{margin-right: 1.375rem;}
-.m-right-24{margin-right: 1.5rem;}
-.m-right-26{margin-right: 1.625rem;}
-.m-right-28{margin-right: 1.75rem;}
-.m-right-30{margin-right: 1.875rem;}
-.m-right-32{margin-right: 2rem;}
-.m-right-34{margin-right: 2.125rem;}
-.m-right-36{margin-right: 2.25rem;}
-.m-right-38{margin-right: 2.375rem;}
-.m-right-40{margin-right: 2.5rem;}
-
-.m-null{margin: 0;};
-
-// Кастомизация select2
-
-.select2
-{
-	border-radius: 0;
-	&.select-md
-	{
-		width: 15rem;
-		height: 1.625rem;
-	}
-	&.select2-container
-	{
-		box-shadow: 1px 1px 1px #c2c4c8; 
-		border: 0;
-		.select2-choice
-		{
-			border: 0;
-			border-radius: 0;
-			.select2-arrow
-			{
-				height: 1.2rem;
-				width: 1.2rem;
-				box-shadow: 1px 1px 1px #c2c4c8; 
-				top: .1rem;
-				right: .15rem;
-				border: 0;
-				background: #edf0f2;
-				box-sizing: border-box;
-				b
-				{
-					background-position: 2px -2px;
-				}
-			}
-		}
-	}
-}
+//*******************//
+// КНОПКИ	НАЧАЛО	 //
+//*******************//
 .btn-square-sm
 {
 	width: 1.375rem;
@@ -147,20 +27,31 @@
 		color: #fff;
 	}
 }
-.btn-square
+.btn-square // level1 квадратной кнопки
 {
 	height: 3.75rem;
+	line-height: 4rem;
 	text-align: center;
+	padding: 0;
 	width: 4rem;
+	color: #333;
+	background: #fff;
+	border-bottom: .25rem solid #fff;
+	&:hover
+	{
+		background: #ebebeb;
+		color: #333;
+		border-bottom: .25rem solid #ebebeb;
+	}
 }
-.btn-menu
+.btn-menu // level 2 квадратной кнопки, меню на верхней панели
 {
 	i
 	{
 		line-height: 1.4;
 	}
 }
-.btn-grey
+.btn-grey // серый фон у кнопки с меню
 {
 	background-color: #b7bbc4;
 	color: #3e4149;
@@ -172,7 +63,7 @@
 		border-bottom: .25rem solid #fff;
 	}
 }
-.map-marker
+.map-marker // кнопочка клика по карте, для выбора координат
 {
 	color: #737880;
 	display: block;
@@ -198,20 +89,30 @@
 	background: url(../images/menu-md-btn-hover.png) 50% 50% no-repeat #009EED;
 	border-bottom: .25rem solid #fff;
 }																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
-.btn-default
+.btn-default // стандартная
 {
 	border-radius: 0;
 	font-family: "Ubuntu-Regular";
 	line-height: 1;
+	padding: 0;
+	display: block;
+	text-align: center;
+	line-height: 2.75rem;
 	width: 6.5rem;
+	text-transform: uppercase;
 	height: 2.75rem;
+	cursor: pointer;
+	i
+	{	
+		display: inline-block;
+		margin-left: .5rem;
+	}
+	&:hover
+	{
+		text-decoration: none;
+	}
 }
-.btn-default i
-{
-	display: inline-block;
-	margin-left: .5rem;
-}
-.btn-blue
+.btn-blue // Синяя кнопка (НАЙТИ)
 {
 	color: #fff;
 	background-color: #0a9be4;
@@ -224,7 +125,92 @@
 		border-bottom: .25rem solid #017ab7;
 	}
 }
-
+.btn-alpha-md
+{
+	width: 11.25rem;
+	height: 1.875rem;
+	border: 1px solid #3e4148;
+	cursor: pointer;
+	display: block;
+	color: #3e4148;
+	font-size: 12px;
+	line-height: 1.875rem;
+	padding: 0;
+	padding-left: .5rem;
+	padding-right: .5rem;
+	font-family: "Ubuntu-Regular";
+	&.cancel
+	{
+		&:hover
+		{
+			background: #d9230e;
+			border: 1px solid #d9230e;
+		}
+	}
+	&:hover
+	{
+		background: #2f3034;
+		color: #ebecf0;
+		text-decoration: none;
+		i
+		{
+			color: #ebecf0;
+		}
+	}
+	p + i
+	{
+		float: right;
+	}
+	i
+	{
+		line-height: 1.875rem;
+		float: left;
+		font-size: 1rem;
+		color: #3e414a;
+	}
+	.alpha-text-holder
+	{
+		margin-left: 1rem;
+		float: left;
+	}
+}
+.btn-alpha-lg
+{
+	border: 1px solid #3e4148;
+	font-family: "Ubuntu-Regular";
+	cursor: pointer;
+	width: 20.875rem;
+	height: 2.875rem;
+	line-height: 2.875rem;
+	display: block;
+	color: #3e4148;
+	font-size: 1.2rem;
+	padding: 0;
+	padding-left: .5rem;
+	padding-right: .5rem;
+	&:hover
+	{
+		background: #2f3034;
+		color: #ebecf0;
+	}
+	p
+	{
+		line-height: 2.875rem;
+	}
+	i
+	{
+		line-height: 2.875rem;
+	}
+	p + i
+	{
+		float: right;
+	}
+	.alpha-text-holder
+	{
+		margin-left: 1rem;
+		float: left;
+	}
+}
 .highlighted
 {
 	border-bottom: .125rem solid #00aaff;
@@ -241,12 +227,12 @@
 	font-size: 1rem;
 	color: #2e3034;
 	font-weight: bold;
-}
-.close-new:hover
-{
-	text-decoration: none;
-	padding: 0;
-	border: .0625rem solid #d7d8da;
+	&:hover
+	{
+		text-decoration: none;
+		padding: 0;
+		border: .0625rem solid #d7d8da;
+	}
 }
 .order
 {
@@ -254,7 +240,15 @@
 	height: .25rem;
 	position: absolute;
 	background: url(../images/order.png) no-repeat;
+	&.active
+	{
+		background: url(../images/order-desc.png) no-repeat;
+	}
 }
+//*******************//
+// КНОПКИ	КОНЕЦ    //
+//*******************//
+
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
 {
 	background: #ddd;
@@ -264,10 +258,6 @@
 {
 	background: #ddd;
 	border: 1px solid #ddd;
-}
-.order.active
-{
-	background: url(../images/order-desc.png) no-repeat;	
 }
 table
 {
@@ -293,6 +283,331 @@ table
 			td
 			{
 				color: #fff;
+			}
+		}
+	}
+}
+i.fa.fa-info-circle // info icon
+{
+	margin-left: 5px;
+	color: #a1a2a6;
+	font-size: .875rem;
+	cursor: pointer;
+	&:hover
+	{
+		color: #353533;
+	}
+}
+.state
+{
+	width: 1.5rem;
+	height: 1.5rem;
+	display: inline-block;
+	line-height: 1.5rem;
+	vertical-align: top;
+	margin-right: 8px;
+	text-align: center;
+	color: #3e4148;
+	&:hover
+	{
+		color: #3e4148;
+	}
+	i
+	{
+		line-height: 1.5rem;
+	}
+}
+.state.add // Маленькая кнопка добавить
+{
+	background: #d3d6dd;
+	&:hover
+	{
+		background: #2f3034;
+		color: #ebecf0;
+	}
+}
+.state.del // Маленькая кнопка удалить
+{
+	&:hover
+	{
+		background: #2f3034;
+		color: #ebecf0;
+	}
+}
+.state.eye // Маленькая кнопка глаза
+{
+	&:hover
+	{
+		background: #2f3034;
+		color: #ebecf0;
+	}
+}
+.state:last-child
+{
+	margin-right: 0;
+}
+.state.red // Красное состояние
+{
+	background: url(../images/state-red.png) no-repeat center center;
+}
+.state.yellow // Желтый Треугольничек
+{
+	background: url(../images/state-yellow.png) no-repeat center center;
+}
+.state.green // Зеленое состояние
+{
+	background: url(../images/state-green.png) no-repeat center center;
+}
+.state.grey // Серое состояние
+{
+	background: url(../images/state-grey.png) no-repeat center center;
+}
+.state.cancel // Cостояние ошибки
+{
+	background: #626671 url(../images/state-cancel.png) no-repeat center center;
+	&:hover
+	{
+		background: #3e414a url(../images/state-cancel.png) no-repeat center center;
+	}
+}
+// Оформление generic
+body.generic
+{
+	background: #ebedf2;
+	padding-top: 20px;
+}
+.form-group
+{
+	margin-bottom: 0;
+}
+.form-label
+{
+	color: #626670;
+	font-family: "Ubuntu-Medium";
+	font-size: .875rem;
+}
+.block-holder
+{
+	padding: 15px;
+	border: 1px solid rgba(0,0,0,.2);
+	&::after
+	{
+		display: block;
+		content: "";
+		clear: both;
+	}
+	&.btns
+	{
+		.row
+		{
+			margin-left: 0;
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+}
+.generic-header
+{
+	font-size: 40px;
+	color: #1f1f1f;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.form-group.row
+{
+	max-width: 810px;
+	margin: 0 auto;
+	clear: both;
+}
+.form-group.row .form-group.row:nth-child(1) .col-md-6,
+{
+	border-top: 0;
+}
+.form-group.row .col-md-6, .form-group.row .col-lg-6
+{
+	border-top: 1px solid #bcbfc8;
+}
+
+.form-group.row>.row:first-of-type .col-md-6, .form-group.row>.row:first-of-type .col-lg-6
+{
+	border-top: 0;
+}
+.form-group.row>.row .col-md-6:first-of-type
+{
+	margin-left: 30px;
+	margin-right: -30px;
+}
+.form-group.row>.col-md-6, .form-group.row>.col-lg-6
+{
+	min-height: 39px;
+	padding: .5rem 0 7px 0;
+}
+.form-group.row>.col-md-6:last-of-type::after, .form-group.row>.col-lg-6:last-of-type::after
+{
+	clear: both;
+	content: '';
+}
+// nested 32px
+.form-input
+{
+	width: 348px;
+	height: 24px;
+	max-width: 348px;
+	font-family: "Ubuntu-Regular";
+	color: #2e3034;
+	border: 0;
+	box-shadow: 0 0 4px #c3c4c9;
+}
+.block-holder.headers
+{
+	max-width: 265px; // Удалить когда появятся нужда в заголовках, добавить в generic
+}
+.cancel-state:hover{
+	background: #3e4149;
+}
+.cancel-state
+{
+	height: 24px;
+	width: 24px;
+	background: #626670;
+}
+.childs-holder .row:first-child .col-md-6, .childs-holder .row:first-child .col-lg-6,
+{
+	border-top: 0;
+}
+.childs-holder .row .col-md-6:first-child, .childs-holder .row .col-lg-6:first-child,
+{
+	margin-left: 30px;
+	margin-right: -30px;
+}
+
+.childs-holder .childs-holder .row .col-md-6:first-child, .childs-holder .childs-holder .row .col-lg-6:first-child,
+{
+	margin-left: 60px;
+	margin-right: -60px;
+}
+
+// Классы-утилиты для размера шрифта px
+	.font-size-12{font-size: .75rem;}
+	.font-size-14{font-size: .875rem;}
+	.font-size-16{font-size: 1rem;}
+	.font-size-18{font-size: 1.125rem;}
+	.font-size-20{font-size: 1.25rem;}
+	.font-size-22{font-size: 1.375rem;}
+	.font-size-24{font-size: 1.5rem;}
+	.font-size-26{font-size: 1.625rem;}
+	.font-size-28{font-size: 1.75rem;}
+	.font-size-30{font-size: 1.875rem;}
+	.font-size-32{font-size: 2rem;}
+	.font-size-34{font-size: 2.125rem;}
+	.font-size-36{font-size: 2.25rem;}
+	.font-size-38{font-size: 2.375rem;}
+	.font-size-40{font-size: 2.5rem;}
+
+// Классы-утилиты для margin-top px
+	.m-top-12{margin-top: .75rem;}
+	.m-top-14{margin-top: .875rem;}
+	.m-top-16{margin-top: 1rem;}
+	.m-top-18{margin-top: 1.125rem;}
+	.m-top-20{margin-top: 1.25rem;}
+	.m-top-22{margin-top: 1.375rem;}
+	.m-top-24{margin-top: 1.5rem;}
+	.m-top-26{margin-top: 1.625rem;}
+	.m-top-28{margin-top: 1.75rem;}
+	.m-top-30{margin-top: 1.875rem;}
+	.m-top-32{margin-top: 2rem;}
+	.m-top-34{margin-top: 2.125rem;}
+	.m-top-36{margin-top: 2.25rem;}
+	.m-top-38{margin-top: 2.375rem;}
+	.m-top-40{margin-top: 2.5rem;}
+
+// Классы-утилиты для margin-left px
+	.m-left-12{margin-left: .75rem;}
+	.m-left-14{margin-left: .875rem;}
+	.m-left-16{margin-left: 1rem;}
+	.m-left-18{margin-left: 1.125rem;}
+	.m-left-20{margin-left: 1.25rem;}
+	.m-left-22{margin-left: 1.375rem;}
+	.m-left-24{margin-left: 1.5rem;}
+	.m-left-26{margin-left: 1.625rem;}
+	.m-left-28{margin-left: 1.75rem;}
+	.m-left-30{margin-left: 1.875rem;}
+	.m-left-32{margin-left: 2rem;}
+	.m-left-34{margin-left: 2.125rem;}
+	.m-left-36{margin-left: 2.25rem;}
+	.m-left-38{margin-left: 2.375rem;}
+	.m-left-40{margin-left: 2.5rem;}
+
+// Классы-утилиты для margin-bottom px
+	.m-bottom-12{margin-bottom: .75rem;}
+	.m-bottom-14{margin-bottom: .875rem;}
+	.m-bottom-16{margin-bottom: 1rem;}
+	.m-bottom-18{margin-bottom: 1.125rem;}
+	.m-bottom-20{margin-bottom: 1.25rem;}
+	.m-bottom-22{margin-bottom: 1.375rem;}
+	.m-bottom-24{margin-bottom: 1.5rem;}
+	.m-bottom-26{margin-bottom: 1.625rem;}
+	.m-bottom-28{margin-bottom: 1.75rem;}
+	.m-bottom-30{margin-bottom: 1.875rem;}
+	.m-bottom-32{margin-bottom: 2rem;}
+	.m-bottom-34{margin-bottom: 2.125rem;}
+	.m-bottom-36{margin-bottom: 2.25rem;}
+	.m-bottom-38{margin-bottom: 2.375rem;}
+	.m-bottom-40{margin-bottom: 2.5rem;}
+
+// Классы-утилиты для margin-right
+	.m-right-12{margin-right: .75rem;}
+	.m-right-14{margin-right: .875rem;}
+	.m-right-16{margin-right: 1rem;}
+	.m-right-18{margin-right: 1.125rem;}
+	.m-right-20{margin-right: 1.25rem;}
+	.m-right-22{margin-right: 1.375rem;}
+	.m-right-24{margin-right: 1.5rem;}
+	.m-right-26{margin-right: 1.625rem;}
+	.m-right-28{margin-right: 1.75rem;}
+	.m-right-30{margin-right: 1.875rem;}
+	.m-right-32{margin-right: 2rem;}
+	.m-right-34{margin-right: 2.125rem;}
+	.m-right-36{margin-right: 2.25rem;}
+	.m-right-38{margin-right: 2.375rem;}
+	.m-right-40{margin-right: 2.5rem;}
+
+.m-null{margin: 0;};
+
+// Кастомизация select2
+
+.select2
+{
+	border-radius: 0;
+	&.select-md
+	{
+		width: 15rem;
+		height: 1.625rem;
+	}
+
+	&.select2-container
+	{
+		// box-shadow: 1px 1px 1px #c2c4c8; // Не определенность с тенями
+		border: 0;
+		.select2-choice
+		{
+			border: 0;
+			border-radius: 0;
+			background-image: none;
+			.select2-arrow
+			{
+				height: 1.2rem;
+				width: 1.2rem;
+				box-shadow: 1px 1px 1px #c2c4c8; 
+				top: .1rem;
+				right: .15rem;
+				border: 0;
+				background: #edf0f2;
+				box-sizing: border-box;
+				b
+				{
+					background-position: 2px -2px;
+				}
 			}
 		}
 	}
