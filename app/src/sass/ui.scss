@@ -373,7 +373,7 @@ i.fa.fa-info-circle // info icon
 // Оформление generic
 body.generic
 {
-	background: #ebedf2;
+	// background: #ebedf2 url(../images/pixel.jpg);
 	padding-top: 20px;
 }
 .form-group
@@ -384,7 +384,9 @@ body.generic
 {
 	color: #626670;
 	font-family: "Ubuntu-Medium";
-	font-size: .875rem;
+	// font-size: .875rem;
+	font-size: 12px;
+	margin-top: 6px;
 }
 .block-holder
 {
@@ -454,6 +456,9 @@ body.generic
 	height: 24px;
 	max-width: 348px;
 	font-family: "Ubuntu-Regular";
+	font-size: 12px;
+	line-height: 16px;
+	padding: 4px;
 	color: #2e3034;
 	border: 0;
 	box-shadow: 0 0 4px #c3c4c9;
@@ -594,20 +599,21 @@ body.generic
 			border: 0;
 			border-radius: 0;
 			background-image: none;
-			.select2-arrow
+			
+		}
+		.select2-selection__arrow
+		{
+			height: 1.2rem;
+			width: 1.2rem;
+			box-shadow: 1px 1px 1px #c2c4c8; 
+			top: .25rem;
+			right: .25rem;
+			border: 0;
+			background: #edf0f2;
+			box-sizing: border-box;
+			b
 			{
-				height: 1.2rem;
-				width: 1.2rem;
-				box-shadow: 1px 1px 1px #c2c4c8; 
-				top: .1rem;
-				right: .15rem;
-				border: 0;
-				background: #edf0f2;
-				box-sizing: border-box;
-				b
-				{
-					background-position: 2px -2px;
-				}
+				background-position: 2px -2px;
 			}
 		}
 	}
