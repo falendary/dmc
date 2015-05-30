@@ -133,6 +133,12 @@ init = function() {
         target.balloon.close();
         return false;
       });
+      jQuery('.holder-bull .name>a').bind("click", function(e)
+      {
+        e.preventDefault();
+        $(".modal-overlay").fadeIn("slow");
+        return
+      });
       nowOpenBalloon = target.coords;
       return;
     }
@@ -140,8 +146,9 @@ init = function() {
   searchHandler() // Обработчик формы поиска МО - состояние init
 
   function searchHandler () {
-    jQuery(".init-search").bind("click", function()
+    jQuery(".init-search").bind("click", function(e)
     {
+      e.preventDefault();
       var latitude = $("#latitude").val();
       var longitude = $("#longitude").val();
 

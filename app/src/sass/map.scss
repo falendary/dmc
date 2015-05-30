@@ -4,6 +4,7 @@
 	width: 100%;
 	height: calc(100% - 19rem - 2rem);
 	z-index: 1;
+	overflow: hidden;
 	.ymaps-2-1-23-hint__text
 	{
 		background: transparent;
@@ -50,7 +51,22 @@
 			{
 				position: absolute;
 				right: .25rem;
+				padding: 0;
+				color: #737880;
 				top: .25rem;
+				&:hover
+				{
+					color: #fff;
+					& + .name
+					{
+						background: #2e3033;
+						a
+						{
+							color: #fff;
+							text-shadow: none;
+						}
+					}
+				}
 			}
 			.name
 				{
@@ -65,13 +81,32 @@
 					font-weight: bold;
 					padding: .625rem 3.25rem .625rem .625rem;
 					box-sizing: border-box;
+					&:hover
+					{
+						background: #2e3033;
+						a
+						{
+							color: #fff;
+							text-shadow: none;
+						}
+					}
+					
 					a
 					{
 						font-family: arial;
-						font-size: 1.166666667rem;
+						// font-size: 1.166666667rem;
+						font-size: 14px;
 						color: #3e4149;
 						text-shadow: .125rem  0 .125rem #e1e1e2;
 						&:hover
+						{
+							text-decoration: none;
+						}
+						&:visited
+						{
+							text-decoration: none;
+						}
+						&:active
 						{
 							text-decoration: none;
 						}
@@ -87,14 +122,28 @@
 					background-image: -ms-linear-gradient(bottom, #E5E5E5 0%, #FAFAFA 100%);
 					background-image: linear-gradient(to bottom, #E5E5E5 0%, #FAFAFA 100%);
 					padding: .25rem .6875rem;
+					background: rgba(46, 48, 51, .9);
 					box-sizing: border-box;
-					color: #3e4149;
-					text-shadow: .125rem  0 .125rem #e1e1e2;
+					color: #fff;
+					position: relative;
+					&::after
+					{
+						position: absolute;
+						left: -5px;
+						top: 5px;
+						content: "";
+						display: block;
+						border-top: 5px solid transparent;
+						border-right: 5px solid #3e4149;
+						border-bottom: 5px solid transparent;
+					}
+					// text-shadow: .125rem  0 .125rem #e1e1e2;
 				}
 			}
 			.body
 			{
-				background: rgba(0, 0, 0, .65);
+				// background: rgba(0, 0, 0, .65);
+				background: rgba(233, 234, 239, .9);
 				color: #fff;
 				padding: .5rem;
 				.row
@@ -113,6 +162,7 @@
 						padding: .075rem .25rem 0 .25rem;
 						box-sizing: border-box;
 						font-weight: bold;
+						color: #3e4149;
 						line-height: 1.5;
 						dt
 						{
@@ -134,6 +184,7 @@
 					}
 					dl.beds
 					{
+						color: #fff;
 						background: rgba(46,48,51, .75);
 						border: .0625rem solid rgba(46,48,51, .75);
 					}

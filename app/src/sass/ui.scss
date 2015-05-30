@@ -29,38 +29,67 @@
 }
 .btn-square // level1 квадратной кнопки
 {
-	height: 3.75rem;
+	height: 3.5rem;
 	line-height: 4rem;
 	text-align: center;
 	padding: 0;
 	width: 4rem;
 	color: #333;
 	background: #fff;
+	border-top: .25rem solid #fff;
 	border-bottom: .25rem solid #fff;
 	&:hover
 	{
 		background: #ebebeb;
 		color: #333;
+		border-top: .25rem solid #ebebeb;
 		border-bottom: .25rem solid #ebebeb;
 	}
 }
 .btn-menu // level 2 квадратной кнопки, меню на верхней панели
 {
+	position: fixed;
+	left: 0;
+	z-index: 10001;
 	i
 	{
-		line-height: 1.4;
+		line-height: 1.15;
 	}
 }
 .btn-grey // серый фон у кнопки с меню
 {
-	background-color: #b7bbc4;
+	background-color: #b6bac3;
 	color: #3e4149;
+	border-top: .25rem solid #b6bac3;
 	border-bottom: .25rem solid #868991;
 	&:hover
 	{
-		color: #fff;
-		background-color: #0a9be4;
-		border-bottom: .25rem solid #fff;
+		color: #3e4149;
+		background-color: #bfc3cc;
+		border-top: .25rem solid #bfc3cc;
+		border-bottom: .25rem solid #93959c;
+	}
+	&:visited
+	{
+		background-color: #b6bac3;
+		color: #3e4149;
+		border-top: .25rem solid #b6bac3;
+		border-bottom: .25rem solid #868991;
+		&:hover
+		{
+			color: #3e4149;
+			background-color: #bfc3cc;
+			border-top: .25rem solid #bfc3cc;
+			border-bottom: .25rem solid #93959c;
+		}
+	}
+	&.active
+	{
+		background-color: #343639;
+		color: #bbbfc9;
+		border-top: .25rem solid #222325;
+		border-bottom: .25rem solid #343639;
+		box-shadow: 1px 1px 0 #484b52;
 	}
 }
 .map-marker // кнопочка клика по карте, для выбора координат
@@ -458,6 +487,7 @@ body.generic
 	font-family: "Ubuntu-Regular";
 	font-size: 12px;
 	line-height: 16px;
+	box-sizing: border-box;
 	padding: 4px;
 	color: #2e3034;
 	border: 0;
@@ -584,6 +614,8 @@ body.generic
 .select2
 {
 	border-radius: 0;
+	font-size: 12px;
+	font-family: "Ubuntu-Regular";
 	&.select-md
 	{
 		width: 15rem;
@@ -617,4 +649,8 @@ body.generic
 			}
 		}
 	}
+}
+.select2-container--default .select2-selection--single
+{
+	border: 0;	
 }

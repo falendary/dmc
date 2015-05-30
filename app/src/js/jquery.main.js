@@ -1,10 +1,26 @@
 jQuery(document).ready(function() {
-  // jQuery('.log tbody').perfectScrollbar();
-  jQuery('.select2').select2();
-  meterCounter(); // обработчик добавления/удаления километров в форме поиска
-  //$("#mo-table").mCustomScrollbar();
-  jqueryGrid(); // jqGrid на табличку
-  coordHl(".i-coords"); // подсвечиваем инпуты с координатами 
+	// jQuery('.log tbody').perfectScrollbar();
+	jQuery('.select2').select2();
+	meterCounter(); // обработчик добавления/удаления километров в форме поиска
+	//$("#mo-table").mCustomScrollbar();
+	jqueryGrid(); // jqGrid на табличку
+	coordHl(".i-coords"); // подсвечиваем инпуты с координатами 
+
+	$(".btn-square.btn-grey.btn-menu").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("active"); // Актив на глобальный враппер
+		$(".holder-time").toggleClass("active"); // Актив на глобальный враппер
+		$(this).toggleClass("active"); // Актив на кнопку
+		var map = $("#map>ymaps"),
+			mapW = map.width();
+		if ($("#wrapper").hasClass("active")) {
+			map.width(mapW-268); 
+		}
+		else
+		{
+			map.width(mapW+268);
+		}
+	});
 });
 
 function meterCounter()
@@ -93,3 +109,49 @@ function jqueryGrid () {
 	//     }
 	// );
 }
+
+$(window).load(function(){
+	// Запускаем кастомный скроллбар
+    $(".modal-window").mCustomScrollbar(
+    	{
+	    	callbacks:{
+	    		  onInit: function()
+	    		  {
+	    		  	var scrollbar = $(".mCSB_1_scrollbar"), // скроллбар
+	    		  		scrollbarHeight = scrollbar.height()  // храним высчитанную высоту скроллбара
+	    		  	
+	    		  	scrollbar.height(scrollbarHeight*3); // искусственно увеличиваем размер скроллиса
+	    		  },
+			      whileScrolling: function(){
+			      	var offset 			= parseInt($("#mCSB_1_container").css("top"),10), // получаем из блока скрипта css top, приводим в целлосисленый
+			    		holder 			= $(".modal-window"), // Один из холдеров модального окна
+			    		tablist 		= holder.find(".nav.nav-tabs"), // прилипающее меню
+			    		tablistH		= tablist.height(), // Высота прилипающего меню, на всяк случай
+			    		tabcontent 		= holder.find(".tab-content"), // Таб-плейт, хранит в себе текущий раздел
+			    		tablistOffset 	= tabcontent.offset(); // берем его оффсет, чтобы отлепить меню
+
+			    	//console.log(tablistH);
+
+			    	// Обрабатываем липучесть меню
+		    		if (tablistOffset.top < 60)
+		    		{
+		    			tablist.css({
+		    				position: "fixed",
+		    				top: "0px"
+		    			})
+		    			tabcontent.css("padding-top", tablistH+"px");
+		    		}
+		    		else
+		    		{
+		    			tablist.css({
+		    				position: "static"
+		    			})
+		    			tabcontent.css({
+		    				paddingTop: 0
+		    			})
+		    		}       
+		   		}
+			}
+		}
+    );
+});

@@ -7,6 +7,10 @@
     width: 100%;
     position: relative;
     z-index: 2;
+    .row-fluid
+    {
+        padding-left: 16.25rem;
+    }
     .holder-time
     {
         padding: .425rem 0.625rem 0;
@@ -24,10 +28,23 @@
             margin: .375rem .625rem;
             float: left;
         }
+        &.active
+        {
+            color: #bbbfc9;
+            span
+            {
+                color: #bbbfc9;
+                i
+                {
+                    color: #c12a1f;
+                }
+            }
+        }
     }
     .nav
     {
-        float: left;
+        position: fixed;
+        left: 18rem;
         li
         {
             float: left;

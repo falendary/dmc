@@ -1,0 +1,111 @@
+#wrapper
+{
+	transition: all .4s ease 0s;
+	height: 100%;
+}
+#page-content-wrapper
+{
+	height: 100%;
+}
+#sidebar-wrapper {
+    margin-left: -268px;
+    left: 0;
+    width: 268px;
+    background: #222;
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    box-shadow: 0 0 4px #32353b inset;
+    transition: all .4s ease 0s;
+    box-sizing: border-box;
+    padding-top: 140px;
+    .sidebar-nav {
+	    display: block;
+	    float: left;
+	    width: 100%;
+	    padding: 0 14px 0 24px;
+	    height: 100%;
+	    list-style: none;
+	    margin: 0;
+	}
+}
+#wrapper.active {
+    padding-left: 268px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 268px;
+}
+.holder-time
+{
+	position: fixed;
+	left: 4.375rem;
+	z-index: 10001;
+}
+.settings-holder
+{
+	position: absolute;
+	bottom: 0;
+	height: 90px;
+	width: 100%;
+	.setting-option
+	{
+		margin-bottom: .6rem;
+		height: 1.5rem;
+		a
+		{
+			font-family: "Ubuntu-Bold";
+			text-transform: uppercase;
+			font-size: 12px;
+			color: #e9eaef;
+			i
+			{
+				display: inline-block;
+				font-size: 14px;
+				width: 1rem;
+				margin-right: .5rem;
+			}
+			&:hover
+			{
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+		
+	}
+}
+.sidebar-nav
+{
+	.user-holder
+	{
+		text-transform: uppercase;
+		color: #e9eaef;
+		font-size: .75rem;
+		font-family: "Ubuntu-Bold";
+		margin-bottom: 1rem;
+		width: 13.5rem;
+		a
+		{
+			margin-top: -8px;
+			color: #e9eaef;
+			&:hover
+			{
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+		&::after
+		{
+			clear: both;
+			content: '';
+			display: block;
+		}
+	}
+	.side-description
+	{
+		font-family: "Ubuntu-Medium";
+		color: #bbbfc9;
+		width: 11.5625rem;
+		font-size: .75rem;
+		line-height: 1.3;
+	}
+}

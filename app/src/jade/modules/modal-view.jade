@@ -1,1101 +1,1001 @@
-.modal-window
-	div(role="tabpanel")
-		ul.nav.nav-tabs(role="tablist")
-			li(role="presentation").active
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 1
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 2
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 3
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 4
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 5
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 6
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 7
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 8
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 9
-			li(role="presentation")
-				a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
-					|РАЗДЕЛ 10
-		.tab-content
-			div(role="tabpanel").tab-pane.active#section-1
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+.modal-overlay
+	.modal-window-holder
+		.modal-window
+			div(role="tabpanel").tabpanel
+				ul.nav.nav-tabs(role="tablist")
+					li(role="presentation").active
+						a(href="#section-1",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 1
+					li(role="presentation")
+						a(href="#section-2",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 2
+					li(role="presentation")
+						a(href="#section-3",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 3
+					li(role="presentation")
+						a(href="#section-4",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 4
+					li(role="presentation")
+						a(href="#section-5",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 5
+					li(role="presentation")
+						a(href="#section-6",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 6
+					li(role="presentation")
+						a(href="#section-7",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 7
+					li(role="presentation")
+						a(href="#section-8",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 8
+					li(role="presentation")
+						a(href="#section-9",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 9
+					li(role="presentation")
+						a(href="#section-10",aria-controls="section-1" role="tab" data-toggle="tab")
+							|РАЗДЕЛ 10
+				.tab-content
+					//- SECTION 1
+					div(role="tabpanel").tab-pane.active#section-1
+						form
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Дата обновления
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Федеральный округ
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 								.childs-holder
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Адрес электронной почты
+												|Должность
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Почтовый адрес
+												|Ф.И.О.
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-1
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Телефон с кодом города
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Адрес электронной почты
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
-								.childs-holder
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Адрес электронной почты
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Почтовый адрес
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-2
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Дата обновления
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Федеральный округ
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
-								.childs-holder
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Адрес электронной почты
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Почтовый адрес
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-3
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Федеральный округ
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
-							.form-group.row
-								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
-								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
-								.childs-holder
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Адрес электронной почты
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Почтовый адрес
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-4
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Дата обновления
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Федеральный округ
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
-								.childs-holder
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Адрес электронной почты
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Почтовый адрес
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-5
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
-							.form-group.row
-								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
-								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
-							.form-group.row
-								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
-								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
-								.childs-holder
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Адрес электронной почты
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
-									.form-group.row
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											label.form-label
-												|Почтовый адрес
-												a(href="#")
-													i.fa.fa-info-circle
-										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-6
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Дата обновления
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Федеральный округ
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+					//- SECTION 2
+					div(role="tabpanel").tab-pane#section-2
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 								.childs-holder
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Адрес электронной почты
+												|Должность
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Почтовый адрес
+												|Ф.И.О.
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-7
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Телефон с кодом города
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Адрес электронной почты
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 3
+					div(role="tabpanel").tab-pane#section-3
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 								.childs-holder
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Адрес электронной почты
+												|Должность
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Почтовый адрес
+												|Ф.И.О.
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-8
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Телефон с кодом города
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Адрес электронной почты
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 4
+					div(role="tabpanel").tab-pane#section-4
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 								.childs-holder
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Адрес электронной почты
+												|Должность
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Почтовый адрес
+												|Ф.И.О.
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-9
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Телефон с кодом города
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Адрес электронной почты
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 5
+					div(role="tabpanel").tab-pane#section-5
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 								.childs-holder
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Адрес электронной почты
+												|Должность
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Почтовый адрес
+												|Ф.И.О.
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-			div(role="tabpanel").tab-pane#section-10
-				form
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Дата обновления
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Федеральный округ
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Муниципальное образование
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							textarea.form-input
-							i.state.red
-							i.state.grey
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Руководитель организации
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-						.childs-holder
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Должность
-										a(href="#")
-											i.fa.fa-info-circle
+										|Телефон с кодом города
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									a.state.cancel(href="#")
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
-										|Ф.И.О.
-										a(href="#")
-											i.fa.fa-info-circle
+										|Адрес электронной почты
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.green
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 6
+					div(role="tabpanel").tab-pane#section-6
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
 							.form-group.row
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 									label.form-label
 										|Муниципальное образование
 								.col-xs-12.col-sm-6.col-md-6.col-lg-6
-									textarea.form-input
-									i.state.red
-									i.state.yellow
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
 								.childs-holder
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Адрес электронной почты
+												|Должность
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											a.state.cancel(href="#")
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
 									.form-group.row
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
 											label.form-label
-												|Почтовый адрес
+												|Ф.И.О.
 												a(href="#")
 													i.fa.fa-info-circle
 										.col-xs-12.col-sm-6.col-md-6.col-lg-6
-											textarea.form-input
-											i.state.red
-											i.state.green
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Телефон с кодом города
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							input.form-input(placeholder="— ", type="text")
-							i.state.red
-							i.state.yellow
-					.form-group.row
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							label.form-label
-								|Адрес электронной почты
-						.col-xs-12.col-sm-6.col-md-6.col-lg-6
-							select.form-input.select2
-							i.state.red
-							i.state.green
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Телефон с кодом города
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Адрес электронной почты
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 7
+					div(role="tabpanel").tab-pane#section-7
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Муниципальное образование
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+								.childs-holder
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Должность
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Ф.И.О.
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Телефон с кодом города
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Адрес электронной почты
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 8
+					div(role="tabpanel").tab-pane#section-8
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Муниципальное образование
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+								.childs-holder
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Должность
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Ф.И.О.
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Телефон с кодом города
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Адрес электронной почты
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 9
+					div(role="tabpanel").tab-pane#section-9
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Муниципальное образование
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+								.childs-holder
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Должность
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Ф.И.О.
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Телефон с кодом города
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Адрес электронной почты
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+					//- SECTION 10
+					div(role="tabpanel").tab-pane#section-10
+						form
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Дата обновления
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Федеральный округ
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Муниципальное образование
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									textarea.form-input(disabled)
+										|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Руководитель организации
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+								.childs-holder
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Должность
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Ф.И.О.
+												a(href="#")
+													i.fa.fa-info-circle
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+									.form-group.row
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											label.form-label
+												|Муниципальное образование
+										.col-xs-12.col-sm-6.col-md-6.col-lg-6
+											textarea.form-input(disabled)
+												|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+										.childs-holder
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Адрес электронной почты
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+											.form-group.row
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													label.form-label
+														|Почтовый адрес
+														a(href="#")
+															i.fa.fa-info-circle
+												.col-xs-12.col-sm-6.col-md-6.col-lg-6
+													textarea.form-input(disabled)
+														|Lorem ipsum dolor sit amet, consectetur adipisicing elit
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Телефон с кодом города
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									input.form-input(disabled, value="lorem ipsum", placeholder="— ", type="text")
+							.form-group.row
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									label.form-label
+										|Адрес электронной почты
+								.col-xs-12.col-sm-6.col-md-6.col-lg-6
+									select.form-input(disabled, value="lorem ipsum").select2
+										option(selected)
+											|lorem

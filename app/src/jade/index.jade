@@ -1,9 +1,13 @@
 doctype html
 html
-    include ./modules/head.jade
-    body
-        include ./modules/panel-top.jade
-        div#map.map
-        include ./modules/panel-bottom.jade
-        include ./modules/modal-view.jade
-        include ./modules/scripts.jade
+	include ./modules/head.jade
+	body
+		div#wrapper
+			div#sidebar-wrapper
+				include ./modules/menu-aside.jade
+			div#page-content-wrapper
+				include ./modules/panel-top.jade
+				div#map.map
+				include ./modules/panel-bottom.jade
+				include ./modules/modal-view.jade
+		include ./modules/scripts.jade

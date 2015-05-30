@@ -10,1361 +10,1436 @@
   <link href="bower_components/select2-bootstrap/select2-bootstrap.css" rel="stylesheet">
   <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/jqgrid/css/ui.jqgrid-bootstarp.css">
+  <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css">
   <link href="css/style.css" rel="stylesheet">
   <body>
-    <header class="panel-top">
-      <div class="container-fluid">
-        <div class="row-fluid"><a href="#" class="btn-square btn-grey btn-menu pull-left"><i class="fa fa-bars font-size-40"></i></a>
-          <div class="holder-time pull-left"><span class="time">04 : 30</span>
-            <div class="separator"></div><span class="date">2014 / 05 / 05</span>
-          </div>
-          <ul class="nav">
-            <li class="active"><a href="#">РЕАГИРОВАНИЕ</a></li>
-            <li><a href="#">ОТЧЕТНОСТЬ</a></li>
-            <li><a href="#">ФИЛЬТР МО</a></li>
-            <li><a href="#">ДАННЫЕ</a></li>
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <div id="sidebar" class="sidebar-nav">
+          <h3 class="user-holder">Виталий Дементьев<a href="#" class="pull-right font-size-20"><i class="fa fa-gear"></i></a></h3>
+          <p class="side-description">
+            Муниципальное бюджетное 
+            учреждение здравоохранения 
+            «Центральная районная больница» 
+            администрации муниципального 
+            образования Павловский район
+          </p>
+          <ul class="settings-holder">
+            <li class="setting-option"><a href="#"><i class="fa fa-power-off"></i>ВЫЙТИ</a></li>
+            <li class="setting-option"><a href="#"><i class="fa fa-question"></i>ПОМОЩЬ</a></li>
           </ul>
         </div>
       </div>
-    </header>
-    <div id="map" class="map"></div>
-    <footer class="panel-bottom">
-      <div class="fancypanel">
-        <div class="container-fluid">
-          <div class="row m-null init">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <form class="mo-search">
-                <div class="form-group emer-kind-holder">
-                  <label for="#emergency-kind">Вид ЧС</label>
-                  <select id="emergency-kind" class="select2 select-md"></select>
+      <div id="page-content-wrapper">
+        <header class="panel-top">
+          <div class="container-fluid">
+            <div class="row-fluid"><a href="#" class="btn-square btn-grey btn-menu pull-left"><i class="fa fa-bars font-size-40"></i></a>
+              <div class="holder-time pull-left"><span class="time">04  <i>: </i>30</span>
+                <div class="separator"></div><span class="date">2014 / 05 / 05</span>
+              </div>
+              <ul class="nav">
+                <li class="active"><a href="#">РЕАГИРОВАНИЕ</a></li>
+                <li><a href="#">ОТЧЕТНОСТЬ</a></li>
+                <li><a href="#">ФИЛЬТР МО</a></li>
+                <li><a href="#">ДАННЫЕ</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <div id="map" class="map"></div>
+        <footer class="panel-bottom">
+          <div class="fancypanel">
+            <div class="container-fluid">
+              <div class="row m-null init">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <form class="mo-search">
+                    <div class="form-group emer-kind-holder">
+                      <label for="#emergency-kind">Вид ЧС</label>
+                      <select id="emergency-kind" class="select2 select-md"></select>
+                    </div>
+                    <div class="form-group emer-type-holder">
+                      <label for="#emergency-type">Тип ЧС</label>
+                      <select id="emergency-type" class="select2 select-md"> </select>
+                    </div>
+                    <div class="form-group coord-holder">
+                      <p class="mo-location pull-left">Координаты ЧС</p>
+                      <div class="input-group">
+                        <input placeholder="ШИРОТА" id="latitude" class="i-coords">
+                        <input placeholder="ДОЛГОТА" id="longitude" class="i-coords">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="radius-holder pull-left"><a class="btn btn-square-sm btn-minus"><i class="fa fa-minus"></i></a>
+                        <div class="radius">
+                          <div class="circle-outer">
+                            <div class="circle-inner"></div>
+                            <div class="counter-holder">
+                              <div class="meter-holder">
+                                <input type="text" value="0" class="quantities">
+                                <p class="scale">км</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><a class="btn btn-square-sm btn-plus"><i class="fa fa-plus"></i></a>
+                      </div>
+                      <div class="form-wrap pull-left"><a href="#" class="map-marker btn-xs-custom"><i class="fa fa-map-marker"></i></a>
+                      </div>
+                    </div><a href="#" class="btn btn-default btn-blue init-search">НАЙТИ<i class="fa fa-search font-size-24">                  </i></a>
+                  </form>
                 </div>
-                <div class="form-group emer-type-holder">
-                  <label for="#emergency-type">Тип ЧС</label>
-                  <select id="emergency-type" class="select2 select-md"> </select>
-                </div>
-                <div class="form-group coord-holder">
-                  <p class="mo-location pull-left">Координаты ЧС</p>
-                  <div class="input-group">
-                    <input placeholder="ШИРОТА" id="latitude" class="i-coords">
-                    <input placeholder="ДОЛГОТА" id="longitude" class="i-coords">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="radius-holder pull-left"><a class="btn btn-square-sm btn-minus"><i class="fa fa-minus"></i></a>
-                    <div class="radius">
-                      <div class="circle-outer">
-                        <div class="circle-inner"></div>
-                        <div class="counter-holder">
-                          <div class="meter-holder">
-                            <input type="text" value="0" class="quantities">
-                            <p class="scale">км</p>
+              </div>
+              <div class="row m-null result">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                  <div role="tabpanel" class="f-search-block">
+                    <ul role="tablist" class="nav nav-tabs">
+                      <li role="presentation" class="active tab-control"><a href="#searchtab" aria-controls="searchtab" role="tab" data-toggle="tab">ПОИСК МО</a></li>
+                      <li role="presentation" class="tab-control"><a href="#legendtab" aria-controls="legendtab" role="tab" data-toggle="tab">УСЛОВНЫЕ ОБОЗНАЧЕНИЯ</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="searchtab" role="tabpanel" class="tab-pane active">
+                        <form class="mo-search">
+                          <div class="form-group emer-kind-holder">
+                            <label for="#emergency-kind">Вид ЧС</label>
+                            <select id="emergency-kind" class="select2 select-md"></select>
+                          </div>
+                          <div class="form-group emer-type-holder">
+                            <label for="#emergency-type">Тип ЧС</label>
+                            <select id="emergency-type" class="select2 select-md"> </select>
+                          </div>
+                          <div class="form-group coord-holder">
+                            <p class="mo-location pull-left">
+                              Суражский район,
+                              Брянская область, Россия
+                            </p>
+                            <div class="input-group">
+                              <input placeholder="ШИРОТА" id="latitude" class="i-coords">
+                              <input placeholder="ДОЛГОТА" id="longitude" class="i-coords">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="radius-holder pull-left"><a class="btn btn-square-sm btn-minus"><i class="fa fa-minus"></i></a>
+                              <div class="radius">
+                                <div class="circle-outer">
+                                  <div class="circle-inner"></div>
+                                  <div class="counter-holder">
+                                    <div class="meter-holder">
+                                      <input type="text" value="15" class="quantities">
+                                      <p class="scale">км</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><a class="btn btn-square-sm btn-plus"><i class="fa fa-plus"></i></a>
+                            </div>
+                            <div class="form-wrap pull-left"><a href="#" class="map-marker btn-xs-custom"><i class="fa fa-map-marker"></i></a><a href="#" class="btn btn-default btn-blue">НАЙТИ<i class="fa fa-search font-size-24">                  </i></a>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div id="legendtab" role="tabpanel" class="tab-pane">
+                        <div class="row m-bottom-20">
+                          <p class="text-center">Расшифровка краткой информации о медицинской организации</p>
+                        </div>
+                        <div class="row scheme-description-holder">
+                          <div class="beds-holder pull-left m-right-16">
+                            <p class="help-ibox-title">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</p>
+                            <ul class="help-ibox">
+                              <li class="row">койки взрослые (всего)</li>
+                              <li class="row">терапевтические</li>
+                              <li class="row">хирургические</li>
+                              <li class="row">травмотологические</li>
+                              <li class="row">нейрохирургические</li>
+                              <li class="row">туберкулезные</li>
+                              <li class="row">инфекционные</li>
+                              <li class="row">ожоговые</li>
+                            </ul>
+                          </div>
+                          <div class="minitable-holder pull-left m-right-16">
+                            <ul class="preview">
+                              <p>ЦРБ    </p>
+                              <li class="row">
+                                <div class="item beds">524</div>
+                                <div class="item beds">214</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">63</div>
+                                <div class="item">30</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">56</div>
+                                <div class="item">10</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">45</div>
+                                <div class="item">7</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">0</div>
+                                <div class="item">0</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">0</div>
+                                <div class="item">0</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">0</div>
+                                <div class="item">0</div>
+                              </li>
+                              <li class="row">
+                                <div class="item">30</div>
+                                <div class="item">4</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="specialist-holder pull-left">
+                            <ul class="help-ibox p-t-22">
+                              <li class="row">врачи (всего)</li>
+                              <li class="row">терапевты</li>
+                              <li class="row">хирурги</li>
+                              <li class="row">травматологи</li>
+                              <li class="row">нейрохирурги</li>
+                              <li class="row">физиаторы</li>
+                              <li class="row">инфекционисты</li>
+                              <li class="row">ожоговые</li>
+                            </ul>
                           </div>
                         </div>
                       </div>
-                    </div><a class="btn btn-square-sm btn-plus"><i class="fa fa-plus"></i></a>
+                    </div>
                   </div>
-                  <div class="form-wrap pull-left"><a href="#" class="map-marker btn-xs-custom"><i class="fa fa-map-marker"></i></a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+                  <div class="log">
+                    <table id="mo-table" class="table table-custom-1">
+                      <thead>
+                        <tr>
+                          <th>&nbsp;</th>
+                          <th>
+                            <p>Полное наименование мо</p>
+                          </th>
+                          <th>
+                            <p>Район</p>
+                          </th>
+                          <th>
+                            <p><i class="fa fa-clock-o"></i>Мин</p>
+                          </th>
+                          <th>
+                            <p><> Км<a href="#"><i class="fa fa-caret-up"></i></a></p>
+                          </th>
+                        </tr>
+                        <tr class="nihil">
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="status">ТЦ1</span></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение "Каневская центральная районная больница" муниципального образования ...</a></td>
+                          <td>
+                            <p>Каневской район</p>
+                          </td>
+                          <td>
+                            <p>4</p>
+                          </td>
+                          <td>
+                            <p>8</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><span class="status">ТЦ2</span></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Кореновская центральная районная больница"</a></td>
+                          <td>
+                            <p>Кореновский район</p>
+                          </td>
+                          <td>
+                            <p>6</p>
+                          </td>
+                          <td>
+                            <p>10</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><span class="status">ТЦ3</span></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Курганинская центральная районная больница"</a></td>
+                          <td>
+                            <p>Курганинский район</p>
+                          </td>
+                          <td>
+                            <p>8</p>
+                          </td>
+                          <td>
+                            <p>12</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
+                          <td>
+                            <p>Брюховецкий район</p>
+                          </td>
+                          <td>
+                            <p>10</p>
+                          </td>
+                          <td>
+                            <p>14</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
+                          <td>
+                            <p>Новопокровский район</p>
+                          </td>
+                          <td>
+                            <p>12</p>
+                          </td>
+                          <td>
+                            <p>16</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
+                          <td>
+                            <p>Новопокровский район</p>
+                          </td>
+                          <td>
+                            <p>12</p>
+                          </td>
+                          <td>
+                            <p>16</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
+                          <td>
+                            <p>Новопокровский район</p>
+                          </td>
+                          <td>
+                            <p>12</p>
+                          </td>
+                          <td>
+                            <p>16</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div id="tabletoolbar"></div>
                   </div>
-                </div><a href="#" class="btn btn-default btn-blue init-search">НАЙТИ<i class="fa fa-search font-size-24">                  </i></a>
-              </form>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="row m-null result">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-              <div role="tabpanel" class="f-search-block">
+          <div class="copyright">Федеральная база данных «Силы и средства медицины катастроф Минздрава России»</div>
+        </footer>
+        <div class="modal-overlay">
+          <div class="modal-window-holder">
+            <div class="modal-window">
+              <div role="tabpanel" class="tabpanel">
                 <ul role="tablist" class="nav nav-tabs">
-                  <li role="presentation" class="active tab-control"><a href="#searchtab" aria-controls="searchtab" role="tab" data-toggle="tab">ПОИСК МО</a></li>
-                  <li role="presentation" class="tab-control"><a href="#legendtab" aria-controls="legendtab" role="tab" data-toggle="tab">УСЛОВНЫЕ ОБОЗНАЧЕНИЯ</a></li>
+                  <li role="presentation" class="active"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 1</a></li>
+                  <li role="presentation"><a href="#section-2" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 2</a></li>
+                  <li role="presentation"><a href="#section-3" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 3</a></li>
+                  <li role="presentation"><a href="#section-4" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 4</a></li>
+                  <li role="presentation"><a href="#section-5" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 5</a></li>
+                  <li role="presentation"><a href="#section-6" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 6</a></li>
+                  <li role="presentation"><a href="#section-7" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 7</a></li>
+                  <li role="presentation"><a href="#section-8" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 8</a></li>
+                  <li role="presentation"><a href="#section-9" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 9</a></li>
+                  <li role="presentation"><a href="#section-10" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 10</a></li>
                 </ul>
                 <div class="tab-content">
-                  <div id="searchtab" role="tabpanel" class="tab-pane active">
-                    <form class="mo-search">
-                      <div class="form-group emer-kind-holder">
-                        <label for="#emergency-kind">Вид ЧС</label>
-                        <select id="emergency-kind" class="select2 select-md"></select>
-                      </div>
-                      <div class="form-group emer-type-holder">
-                        <label for="#emergency-type">Тип ЧС</label>
-                        <select id="emergency-type" class="select2 select-md"> </select>
-                      </div>
-                      <div class="form-group coord-holder">
-                        <p class="mo-location pull-left">
-                          Суражский район,
-                          Брянская область, Россия
-                        </p>
-                        <div class="input-group">
-                          <input placeholder="ШИРОТА" id="latitude" class="i-coords">
-                          <input placeholder="ДОЛГОТА" id="longitude" class="i-coords">
+                  <div role="tabpanel" id="section-1" class="tab-pane active">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="radius-holder pull-left"><a class="btn btn-square-sm btn-minus"><i class="fa fa-minus"></i></a>
-                          <div class="radius">
-                            <div class="circle-outer">
-                              <div class="circle-inner"></div>
-                              <div class="counter-holder">
-                                <div class="meter-holder">
-                                  <input type="text" value="15" class="quantities">
-                                  <p class="scale">км</p>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
                                 </div>
                               </div>
                             </div>
-                          </div><a class="btn btn-square-sm btn-plus"><i class="fa fa-plus"></i></a>
+                          </div>
                         </div>
-                        <div class="form-wrap pull-left"><a href="#" class="map-marker btn-xs-custom"><i class="fa fa-map-marker"></i></a><a href="#" class="btn btn-default btn-blue">НАЙТИ<i class="fa fa-search font-size-24">                  </i></a>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
                         </div>
                       </div>
                     </form>
                   </div>
-                  <div id="legendtab" role="tabpanel" class="tab-pane">
-                    <div class="row m-bottom-20">
-                      <p class="text-center">Расшифровка краткой информации о медицинской организации</p>
-                    </div>
-                    <div class="row scheme-description-holder">
-                      <div class="beds-holder pull-left m-right-16">
-                        <p class="help-ibox-title">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</p>
-                        <ul class="help-ibox">
-                          <li class="row">койки взрослые (всего)</li>
-                          <li class="row">терапевтические</li>
-                          <li class="row">хирургические</li>
-                          <li class="row">травмотологические</li>
-                          <li class="row">нейрохирургические</li>
-                          <li class="row">туберкулезные</li>
-                          <li class="row">инфекционные</li>
-                          <li class="row">ожоговые</li>
-                        </ul>
+                  <div role="tabpanel" id="section-2" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="minitable-holder pull-left m-right-16">
-                        <ul class="preview">
-                          <p>ЦРБ    </p>
-                          <li class="row">
-                            <div class="item beds">524</div>
-                            <div class="item beds">214</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">63</div>
-                            <div class="item">30</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">56</div>
-                            <div class="item">10</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">45</div>
-                            <div class="item">7</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">0</div>
-                            <div class="item">0</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">0</div>
-                            <div class="item">0</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">0</div>
-                            <div class="item">0</div>
-                          </li>
-                          <li class="row">
-                            <div class="item">30</div>
-                            <div class="item">4</div>
-                          </li>
-                        </ul>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
                       </div>
-                      <div class="specialist-holder pull-left">
-                        <ul class="help-ibox p-t-22">
-                          <li class="row">врачи (всего)</li>
-                          <li class="row">терапевты</li>
-                          <li class="row">хирурги</li>
-                          <li class="row">травматологи</li>
-                          <li class="row">нейрохирурги</li>
-                          <li class="row">физиаторы</li>
-                          <li class="row">инфекционисты</li>
-                          <li class="row">ожоговые</li>
-                        </ul>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
                       </div>
-                    </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-3" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-4" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-5" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-6" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-7" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-8" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-9" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div role="tabpanel" id="section-10" class="tab-pane">
+                    <form>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Дата обновления</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Федеральный округ</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Муниципальное образование</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Руководитель организации</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+                        <div class="childs-holder">
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label class="form-label">Муниципальное образование</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                            </div>
+                            <div class="childs-holder">
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <textarea disabled class="form-input">Lorem ipsum dolor sit amet, consectetur adipisicing elit</textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Телефон с кодом города</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <input disabled value="lorem ipsum" placeholder="— " type="text" class="form-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <label class="form-label">Адрес электронной почты</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                          <select disabled value="lorem ipsum" class="form-input select2">
+                            <option selected>lorem</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-              <div class="log">
-                <table id="mo-table" class="table table-custom-1">
-                  <thead>
-                    <tr>
-                      <th>&nbsp;</th>
-                      <th>
-                        <p>Полное наименование мо</p>
-                      </th>
-                      <th>
-                        <p>Район</p>
-                      </th>
-                      <th>
-                        <p><i class="fa fa-clock-o"></i>Мин</p>
-                      </th>
-                      <th>
-                        <p><> Км<a href="#"><i class="fa fa-caret-up"></i></a></p>
-                      </th>
-                    </tr>
-                    <tr class="nihil">
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><span class="status">ТЦ1</span></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение "Каневская центральная районная больница" муниципального образования ...</a></td>
-                      <td>
-                        <p>Каневской район</p>
-                      </td>
-                      <td>
-                        <p>4</p>
-                      </td>
-                      <td>
-                        <p>8</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><span class="status">ТЦ2</span></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Кореновская центральная районная больница"</a></td>
-                      <td>
-                        <p>Кореновский район</p>
-                      </td>
-                      <td>
-                        <p>6</p>
-                      </td>
-                      <td>
-                        <p>10</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><span class="status">ТЦ3</span></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Курганинская центральная районная больница"</a></td>
-                      <td>
-                        <p>Курганинский район</p>
-                      </td>
-                      <td>
-                        <p>8</p>
-                      </td>
-                      <td>
-                        <p>12</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
-                      <td>
-                        <p>Брюховецкий район</p>
-                      </td>
-                      <td>
-                        <p>10</p>
-                      </td>
-                      <td>
-                        <p>14</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
-                      <td>
-                        <p>Новопокровский район</p>
-                      </td>
-                      <td>
-                        <p>12</p>
-                      </td>
-                      <td>
-                        <p>16</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
-                      <td>
-                        <p>Новопокровский район</p>
-                      </td>
-                      <td>
-                        <p>12</p>
-                      </td>
-                      <td>
-                        <p>16</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><a href="#">Муниципальное бюджетное учреждение здравоохранения "Центральная районная больница" Брюховецкого района</a></td>
-                      <td>
-                        <p>Новопокровский район</p>
-                      </td>
-                      <td>
-                        <p>12</p>
-                      </td>
-                      <td>
-                        <p>16</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div id="tabletoolbar"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="copyright">Федеральная база данных «Силы и средства медицины катастроф Минздрава России»</div>
-    </footer>
-    <div class="modal-window">
-      <div role="tabpanel">
-        <ul role="tablist" class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 1</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 2</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 3</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 4</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 5</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 6</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 7</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 8</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 9</a></li>
-          <li role="presentation"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">РАЗДЕЛ 10</a></li>
-        </ul>
-        <div class="tab-content">
-          <div role="tabpanel" id="section-1" class="tab-pane active">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-1" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-2" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-3" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-4" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-5" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-6" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-7" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-8" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-9" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" id="section-10" class="tab-pane">
-            <form>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Дата обновления</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Федеральный округ</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Муниципальное образование</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <textarea class="form-input"></textarea><i class="state red"></i><i class="state grey"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Руководитель организации</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-                <div class="childs-holder">
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Должность<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Ф.И.О.<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <label class="form-label">Муниципальное образование</label>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                      <textarea class="form-input"></textarea><i class="state red"></i><i class="state yellow"></i>
-                    </div>
-                    <div class="childs-holder">
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Адрес электронной почты<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><a href="#" class="state cancel"></a>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <label class="form-label">Почтовый адрес<a href="#"><i class="fa fa-info-circle"></i></a></label>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <textarea class="form-input"></textarea><i class="state red"></i><i class="state green"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Телефон с кодом города</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <input placeholder="— " type="text" class="form-input"><i class="state red"></i><i class="state yellow"></i>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <label class="form-label">Адрес электронной почты</label>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <select class="form-input select2"></select><i class="state red"></i><i class="state green"></i>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
       </div>
@@ -1376,6 +1451,8 @@
     <script src="bower_components/select2/dist/js/select2.min.js" type="text/javascript"></script>
     <script src="bower_components/jqgrid/js/i18n/grid.locale-ru.js" type="text/javascript"></script>
     <script src="bower_components/jqgrid/js/jquery.jqGrid.js" type="text/javascript"></script>
+    <script src="bower_components/jquery-mousewheel/jquery.mousewheel.min.js" type="text/javascript"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
     <script src="js/jquery.main.js" type="text/javascript"></script>
     <script src="js/ymap.js" type="text/javascript"></script>
   </body>

@@ -1,13 +1,69 @@
+.modal-overlay
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	z-index: 19999;
+	height: 100%;
+	background: rgba(255,255,255, .8);
+	// display: none;
+}
+.modal-window-holder
+{
+	margin: 0 auto;
+	z-index: 10;
+	// max-height: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding-top: 142px;
+	padding-bottom: 142px;
+	width: 1000px;
+	// margin-left: -480px;
+}
 .modal-window
 {
 	width: 960px;
-	display: none;
-	position: absolute;
-	top: 0;
-	z-index: 10;
-	left: 50%;
-	margin-left: -480px;
+	margin: 0 auto;
+	// overflow: hidden;
+	height: 100%;
+	position: relative;
+	
+	.mCustomScrollBox
+	{
+		overflow: inherit;
+		.mCSB_container
+		{
+			overflow: auto;
+		}
+		.mCSB_scrollTools.mCSB_1_scrollbar
+		{
+			top: -152px;
+			right: -20px;
+			background: #6c6f74;
+			.mCSB_draggerRail
+			{
+				background: #6c6f74;
+			}
+			.mCSB_dragger_bar
+			{
+				background: #e6e6e8;
+				border: 4px solid #e6e6e8;
+				border-radius: 0;
+				height: 30%;
+			}
+		}
+	}
+	.nav.nav-tabs
+	{
+		z-index: 39999;
+	}
+}
+.tabpanel
+{
 	background-color: #ebedf2;
 	border-left: 1px solid #e1e2e4;
 	border-right: 1px solid #e1e2e4;
+	padding-bottom: 40px;
 }
