@@ -137,7 +137,7 @@ init = function() {
       {
         e.preventDefault();
         $(".modal-overlay").fadeIn("slow");
-        return
+        return false;
       });
       nowOpenBalloon = target.coords;
       return;

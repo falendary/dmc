@@ -81,12 +81,14 @@
 					font-weight: bold;
 					padding: .625rem 3.25rem .625rem .625rem;
 					box-sizing: border-box;
+					text-decoration: none;
 					&:hover
 					{
 						background: #2e3033;
 						a
 						{
 							color: #fff;
+							text-decoration: none;
 							text-shadow: none;
 						}
 					}
@@ -96,6 +98,7 @@
 						font-family: arial;
 						// font-size: 1.166666667rem;
 						font-size: 14px;
+						text-decoration: none;
 						color: #3e4149;
 						text-shadow: .125rem  0 .125rem #e1e1e2;
 						&:hover

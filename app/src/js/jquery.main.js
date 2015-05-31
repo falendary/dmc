@@ -21,6 +21,11 @@ jQuery(document).ready(function() {
 			map.width(mapW+268);
 		}
 	});
+	$(".window-close.w-icon").bind("click", function(e)
+	{
+		e.preventDefault();
+		$(".modal-overlay").fadeOut("slow");
+	});
 });
 
 function meterCounter()

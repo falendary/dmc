@@ -274,6 +274,57 @@
 		background: url(../images/order-desc.png) no-repeat;
 	}
 }
+.window-blanktab
+{
+	background: url(../images/ico-blanktab.png) no-repeat center center;
+	&:hover
+	{
+		background: url(../images/ico-blanktab-hover.png) no-repeat center center;
+	}
+}
+.window-fullscreen
+{
+	background: url(../images/ico-fullscreen.png) no-repeat center center;
+	&:hover
+	{
+		background: url(../images/ico-fullscreen-hover.png) no-repeat center center;
+	}
+}
+.window-settings
+{
+	position: relative;
+	float: right;
+	top: -34px;
+	li
+	{
+		float: left;
+		width: 2rem;
+	}
+	&::after
+	{
+		clear: both;
+		display: block;
+		content: "";
+	}
+}
+.w-icon
+{
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background-color: #d6d9e1;
+	transition: all .4s ease-out;
+	color: #626670;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 2rem;
+	&:hover
+	{
+		color: #fff;
+		background-color: #2e3033;
+	}
+}
+
 //*******************//
 // КНОПКИ	КОНЕЦ    //
 //*******************//

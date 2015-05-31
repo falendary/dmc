@@ -144,15 +144,18 @@ body {
           box-shadow: 0 1px 1px #d6d6d6;
           font-weight: bold;
           padding: .625rem 3.25rem .625rem .625rem;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          text-decoration: none; }
           .map .holder-bull .detailed .head .name:hover {
             background: #2e3033; }
             .map .holder-bull .detailed .head .name:hover a {
               color: #fff;
+              text-decoration: none;
               text-shadow: none; }
           .map .holder-bull .detailed .head .name a {
             font-family: arial;
             font-size: 14px;
+            text-decoration: none;
             color: #3e4149;
             text-shadow: .125rem 0 .125rem #e1e1e2; }
             .map .holder-bull .detailed .head .name a:hover {
@@ -376,7 +379,8 @@ body {
   width: 100%;
   z-index: 19999;
   height: 100%;
-  background: rgba(255, 255, 255, 0.8); }
+  background: rgba(255, 255, 255, 0.8);
+  display: none; }
 
 .modal-window-holder {
   margin: 0 auto;
@@ -1191,6 +1195,42 @@ body {
   background: url(../images/order.png) no-repeat; }
   .order.active {
     background: url(../images/order-desc.png) no-repeat; }
+
+.window-blanktab {
+  background: url(../images/ico-blanktab.png) no-repeat center center; }
+  .window-blanktab:hover {
+    background: url(../images/ico-blanktab-hover.png) no-repeat center center; }
+
+.window-fullscreen {
+  background: url(../images/ico-fullscreen.png) no-repeat center center; }
+  .window-fullscreen:hover {
+    background: url(../images/ico-fullscreen-hover.png) no-repeat center center; }
+
+.window-settings {
+  position: relative;
+  float: right;
+  top: -34px; }
+  .window-settings li {
+    float: left;
+    width: 2rem; }
+  .window-settings::after {
+    clear: both;
+    display: block;
+    content: ""; }
+
+.w-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: #d6d9e1;
+  transition: all .4s ease-out;
+  color: #626670;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 2rem; }
+  .w-icon:hover {
+    color: #fff;
+    background-color: #2e3033; }
 
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background: #ddd;
