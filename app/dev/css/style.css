@@ -389,11 +389,12 @@ body {
   overflow: hidden;
   padding-top: 142px;
   padding-bottom: 142px;
-  width: 1000px; }
+  width: 100%;
+  max-width: 64rem; }
 
 .modal-window {
-  width: 960px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 64rem;
   height: 100%;
   position: relative; }
   .modal-window .mCustomScrollBox {
@@ -402,7 +403,7 @@ body {
       overflow: auto; }
     .modal-window .mCustomScrollBox .mCSB_scrollTools.mCSB_1_scrollbar {
       top: -152px;
-      right: -20px;
+      right: 42px;
       background: #6c6f74; }
       .modal-window .mCustomScrollBox .mCSB_scrollTools.mCSB_1_scrollbar .mCSB_draggerRail {
         background: #6c6f74; }
@@ -413,12 +414,32 @@ body {
         height: 30%; }
   .modal-window .nav.nav-tabs {
     z-index: 39999; }
+    .modal-window .nav.nav-tabs li.active a {
+      color: #fff;
+      background: #3e414a; }
+    .modal-window .nav.nav-tabs li:hover a {
+      color: #fff;
+      background: #3e414a; }
+    .modal-window .nav.nav-tabs li a {
+      transition: all .4s ease-out;
+      font-size: 12px;
+      color: #656871;
+      font-family: "Ubuntu-Bold";
+      background: #ecedf2;
+      border-bottom: 2px solid #bbbfc8; }
 
 .tabpanel {
   background-color: #ebedf2;
   border-left: 1px solid #e1e2e4;
   border-right: 1px solid #e1e2e4;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 60rem; }
+  .tabpanel .nav.nav-tabs {
+    text-align: center; }
+    .tabpanel .nav.nav-tabs li {
+      float: none;
+      display: inline-block; }
 
 .panel-bottom {
   min-height: 18rem;

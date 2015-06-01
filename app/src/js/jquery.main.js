@@ -138,7 +138,7 @@ $(window).load(function(){
 			    	//console.log(tablistH);
 
 			    	// Обрабатываем липучесть меню
-		    		if (tablistOffset.top < 60)
+		    		if (tablistOffset.top < 40)
 		    		{
 		    			tablist.css({
 		    				position: "fixed",
@@ -146,7 +146,7 @@ $(window).load(function(){
 		    			})
 		    			tabcontent.css("padding-top", tablistH+"px");
 		    		}
-		    		else
+		    		else if (tablistOffset.top <= 80)
 		    		{
 		    			tablist.css({
 		    				position: "static"
