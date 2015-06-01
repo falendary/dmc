@@ -142,14 +142,17 @@ $(window).load(function(){
 		    		{
 		    			tablist.css({
 		    				position: "fixed",
-		    				top: "0px"
+		    				top: "0px",
+		    				left: "50%",
+		    				marginLeft: "-343px"
 		    			})
 		    			tabcontent.css("padding-top", tablistH+"px");
 		    		}
 		    		else if (tablistOffset.top <= 80)
 		    		{
 		    			tablist.css({
-		    				position: "static"
+		    				position: "static",
+		    				marginLeft: "0"
 		    			})
 		    			tabcontent.css({
 		    				paddingTop: 0
