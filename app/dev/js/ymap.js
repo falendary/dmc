@@ -180,6 +180,12 @@ init = function() {
         });
         $(".fancypanel .row.init").remove();
         $(".fancypanel .row.result").show();
+        // Ресайзим сетку jqgrid
+        (function()
+        {
+          var newWidth = jQuery("#mo-table").closest(".ui-jqgrid").parent().width();
+          jQuery("#mo-table").jqGrid("setGridWidth", newWidth, true);
+        })();
       };
     });
   }

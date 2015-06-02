@@ -342,11 +342,16 @@
         {
             float:          left;
             height:         100%;
+            width: 100%;
             // background:     #fff;
             // width:          45.246753247%;
             margin:         0 10% 0 0;
             padding-top: .625rem;
             position: relative;
+            .ui-state-hover
+            {
+                border: 0;
+            }
             table.table-custom-1
             {
                 font-family:    "Ubuntu-Regular";
