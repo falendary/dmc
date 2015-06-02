@@ -1,10 +1,59 @@
+"use strict";
 jQuery(document).ready(function() {
+	$(window).resize(function() {
+		console.log("resized");
+		console.log($(window).width());
+	    // var $grid = $("#mo-table"),
+	    //     newWidth = $grid.closest(".ui-jqgrid").parent().width();
+	    // $grid.jqGrid("setGridWidth", newWidth, true);
+	});
 	// jQuery('.log tbody').perfectScrollbar();
 	jQuery('.select2').select2();
 	meterCounter(); // обработчик добавления/удаления километров в форме поиска
 	//$("#mo-table").mCustomScrollbar();
-	jqueryGrid(); // jqGrid на табличку
+	$.when(jqueryGrid()).then(function()
+	{
+		var table 	= jQuery("#mo-table"),
+			tr 		= table.find("tr"),
+			td 		= tr.find("td:first-child");
+
+		// Раскрашиваем статусы
+		(function()
+			{
+				$.each(td, function()
+				{
+					var status = jQuery(this).html() // С
+					if (status != "&nbsp;" && status != "") {
+						jQuery(this).html("<span class='status'>"+status+"</span>");
+					}
+				})
+			})();
+		// Добавляем синюю полосочку на ховер tr
+		(function()
+			{
+				var hoverline = $("#hoverline");
+				tr.bind("mouseenter", function()
+				{
+					var trOffset = $(this).offset();
+					console.log(trOffset.top);
+					hoverline.offset({top: trOffset.top, left: trOffset.left-5});
+					hoverline.show();	
+				}).bind("mouseleave", function()
+				{
+					hoverline.offset({top: 0, left: 0});
+					hoverline.css({top: "0px", left: "0px"});
+					hoverline.hide();
+				})
+			})();
+	}); // jqGrid на табличку
 	coordHl(".i-coords"); // подсвечиваем инпуты с координатами 
+
+	jQuery('#mo-table td>a').bind("click", function(e)
+      {
+        e.preventDefault();
+        $(".modal-overlay").fadeIn("slow");
+        return 
+      });
 
 	$(".btn-square.btn-grey.btn-menu").click(function(e) {
 		e.preventDefault();
@@ -73,7 +122,7 @@ function jqueryGrid () {
 	   	colNames:['', 'ПОЛНОЕ НАИМЕНОВАНИЕ МО', 'РАЙОН', 'МИН','КМ'],
 	   	colModel:[
 	   		{name:'status',	key : true,	index:'status',	width:24},
-	   		{name:'mo',index:'mo', width:800},
+	   		{name:'mo',index:'mo', width:800, formatter:'showlink', formatoptions:{baseLinkUrl:'#'}},
 	   		{name:'district', index:'district',	width:160},
 	   		{name:'arrivetime',index:'arrivetime', width:70, align:"right"},
 	   		{name:'kilometers',index:'kilometers', width:65, align:"right"}
@@ -102,6 +151,8 @@ function jqueryGrid () {
 	for(var i=0;i<=mydata.length;i++) {
 		jQuery("#mo-table").jqGrid('addRowData',i+1,mydata[i]);
 	}
+
+
 	// jQuery("#mo-table").jqGrid('navGrid','#tabletoolbar',  // Управление тулбаром таблицы
 	//     {edit:false,add:false,del:false}, // Отключаем от тулбара редактирование, добавление и удаление записей. На тулбаре останутся только две кнопки: "Поиск" и "Обновить"
 	//     {}, // Опции окон редактирования

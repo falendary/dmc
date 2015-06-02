@@ -139,6 +139,13 @@ init = function() {
         $(".modal-overlay").fadeIn("slow");
         return false;
       });
+      jQuery(".holder-bull .item").each(function()
+      {
+        var dd = $(this).find("dd")
+        if (dd.html() == "0") {
+          $(this).addClass("empty");
+        };
+      })
       nowOpenBalloon = target.coords;
       return;
     }

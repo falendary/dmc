@@ -158,7 +158,7 @@
 						width: 11.375rem;
 						height: 1.125rem;
 						margin: 0 .46rem 0 0;
-						border: .0625rem solid #838286;
+						border: 1px solid #666668;
 						float: left;
 						font-family: "Ubuntu-Regular";
 						font-size: .616666667rem;
@@ -166,7 +166,12 @@
 						box-sizing: border-box;
 						font-weight: bold;
 						color: #3e4149;
-						line-height: 1.5;
+						line-height: 1.7;
+						&.empty
+						{
+							border: 1px solid #aaa9a5;
+							color: #aaa9a5;
+						}
 						dt
 						{
 							float: left;
@@ -182,7 +187,7 @@
 							float: right;
 							width: 1rem;
 							text-align: center;
-							line-height: 1.4;
+							// line-height: 1.4;
 						}
 					}
 					dl.beds
