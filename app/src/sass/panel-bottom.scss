@@ -348,6 +348,10 @@
             margin:         0 10% 0 0;
             padding-top: .625rem;
             position: relative;
+            .preview
+            {
+                position: absolute;
+            }
             .ui-state-hover
             {
                 border: 0;

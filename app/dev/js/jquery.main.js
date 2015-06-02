@@ -11,7 +11,8 @@ jQuery(document).ready(function() {
 			scrollbox	= holder.find(".ui-jqgrid-bdiv"),
 			table 		= jQuery("#mo-table"),
 			tr 			= table.find("tr"),
-			td 			= tr.find("td:first-child");
+			td 			= tr.find("td:first-child"),
+			td2			= tr.find("td:nth-child(2)");
 		// Раскрашиваем статусы
 		(function()
 			{
@@ -35,8 +36,43 @@ jQuery(document).ready(function() {
 		function trHover () {
 			var hoverline 	= $("#hoverline"), // сама синия линия
 				trOffset  	= null, // Позиция tr, меняется от скролла
-				trH 		= null; // высота tr
-
+				trH 		= null, // высота tr
+				// Превьюшка при наведение на второую ячейку
+				previewtr = '<div class="preview">'+
+							'	<p>ЦРБ</p>'+
+							'<div class="row">'+
+							'	<div class="item beds">524</div>'+
+							'	<div class="item beds">58</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">182</div>'+
+							'	<div class="item">63</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">56</div>'+
+							'	<div class="item">0</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">45</div>'+
+							'	<div class="item">0</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">182</div>'+
+							'	<div class="item">63</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">56</div>'+
+							'	<div class="item">0</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">45</div>'+
+							'	<div class="item">0</div>'+
+							'</div>'+
+							'<div class="row">'+
+							'	<div class="item">45</div>'+
+							'	<div class="item">0</div>'+
+							'</div>'+
+						'</div>';
 			tr.bind("mouseenter", function()
 			{
 				trOffset = $(this).offset(); // берем отступ строки
@@ -44,12 +80,20 @@ jQuery(document).ready(function() {
 				hoverline.offset({top: trOffset.top, left: trOffset.left-5}); // делаем у линии такойже
 				trH = $(this).height(); // берем  высоту строки
 				hoverline.height(trH); // стави значение линии
-				hoverline.show();	
+				hoverline.show(); // показываем синюю линию
+				//console.log(previewtr);
+				$("#page-content-wrapper").append(previewtr); // создаем превьюшку
+				var previewholder = $("#page-content-wrapper").find(".preview"); // Находим ее в DOM
+				$(this).on("mousemove", function(e)
+				{
+					previewholder.css({left: e.pageX+"px", top: e.pageY+"px"});
+				});
 			}).bind("mouseleave", function()
 			{
-				hoverline.offset({top: 0, left: 0});
-				hoverline.css({top: "0px", left: "0px"});
-				hoverline.hide();
+				hoverline.offset({top: 0, left: 0}); // обнуляем координаты
+				hoverline.css({top: "0px", left: "0px"}); // обнуляем координаты (2)
+				hoverline.hide(); // прячем синию линию
+				$("#page-content-wrapper").find(".preview").remove(); // удаляем превьюшку
 			})
 		}
 	}); // jqGrid на табличку
