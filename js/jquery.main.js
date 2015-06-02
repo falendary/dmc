@@ -1,22 +1,17 @@
 "use strict";
 jQuery(document).ready(function() {
-	$(window).resize(function() {
-		console.log("resized");
-		console.log($(window).width());
-	    // var $grid = $("#mo-table"),
-	    //     newWidth = $grid.closest(".ui-jqgrid").parent().width();
-	    // $grid.jqGrid("setGridWidth", newWidth, true);
-	});
+
 	// jQuery('.log tbody').perfectScrollbar();
 	jQuery('.select2').select2();
 	meterCounter(); // обработчик добавления/удаления километров в форме поиска
 	//$("#mo-table").mCustomScrollbar();
 	$.when(jqueryGrid()).then(function()
 	{
-		var table 	= jQuery("#mo-table"),
-			tr 		= table.find("tr"),
-			td 		= tr.find("td:first-child");
-
+		var holder 		= $(".log"),
+			scrollbox	= holder.find(".ui-jqgrid-bdiv"),
+			table 		= jQuery("#mo-table"),
+			tr 			= table.find("tr"),
+			td 			= tr.find("td:first-child");
 		// Раскрашиваем статусы
 		(function()
 			{
@@ -31,20 +26,32 @@ jQuery(document).ready(function() {
 		// Добавляем синюю полосочку на ховер tr
 		(function()
 			{
-				var hoverline = $("#hoverline");
-				tr.bind("mouseenter", function()
+				scrollbox.bind("scroll", function()
 				{
-					var trOffset = $(this).offset();
-					console.log(trOffset.top);
-					hoverline.offset({top: trOffset.top, left: trOffset.left-5});
-					hoverline.show();	
-				}).bind("mouseleave", function()
-				{
-					hoverline.offset({top: 0, left: 0});
-					hoverline.css({top: "0px", left: "0px"});
-					hoverline.hide();
-				})
+					trHover(); // реинициализируем на скролле, чтобы не ломалась линия
+				});
+				trHover(); // простой вызов 
 			})();
+		function trHover () {
+			var hoverline 	= $("#hoverline"), // сама синия линия
+				trOffset  	= null, // Позиция tr, меняется от скролла
+				trH 		= null; // высота tr
+
+			tr.bind("mouseenter", function()
+			{
+				trOffset = $(this).offset(); // берем отступ строки
+				// console.log(trOffset.top);
+				hoverline.offset({top: trOffset.top, left: trOffset.left-5}); // делаем у линии такойже
+				trH = $(this).height(); // берем  высоту строки
+				hoverline.height(trH); // стави значение линии
+				hoverline.show();	
+			}).bind("mouseleave", function()
+			{
+				hoverline.offset({top: 0, left: 0});
+				hoverline.css({top: "0px", left: "0px"});
+				hoverline.hide();
+			})
+		}
 	}); // jqGrid на табличку
 	coordHl(".i-coords"); // подсвечиваем инпуты с координатами 
 
@@ -122,10 +129,10 @@ function jqueryGrid () {
 	   	colNames:['', 'ПОЛНОЕ НАИМЕНОВАНИЕ МО', 'РАЙОН', 'МИН','КМ'],
 	   	colModel:[
 	   		{name:'status',	key : true,	index:'status',	width:24},
-	   		{name:'mo',index:'mo', width:800, formatter:'showlink', formatoptions:{baseLinkUrl:'#'}},
-	   		{name:'district', index:'district',	width:160},
-	   		{name:'arrivetime',index:'arrivetime', width:70, align:"right"},
-	   		{name:'kilometers',index:'kilometers', width:65, align:"right"}
+	   		{name:'mo',index:'mo', formatter:'showlink', width:600, formatoptions:{baseLinkUrl:'#'}},
+	   		{name:'district', width:200, index:'district'},
+	   		{name:'arrivetime',index:'arrivetime', width:80, align:"right"},
+	   		{name:'kilometers',index:'kilometers', width:40, align:"right"}
 	   	],
 	   	rowNum:10,
 	   	rowList:[10,20,30],
@@ -151,6 +158,10 @@ function jqueryGrid () {
 	for(var i=0;i<=mydata.length;i++) {
 		jQuery("#mo-table").jqGrid('addRowData',i+1,mydata[i]);
 	}
+	$(window).resize(function() {
+	    var newWidth = jQuery("#mo-table").closest(".ui-jqgrid").parent().width();
+	    jQuery("#mo-table").jqGrid("setGridWidth", newWidth, true);
+	});
 
 
 	// jQuery("#mo-table").jqGrid('navGrid','#tabletoolbar',  // Управление тулбаром таблицы
