@@ -53,15 +53,6 @@ a:hover {
 .pull-right {
   float: right; }
 
-body {
-  scrollbar-face-color: #000000;
-  scrollbar-shadow-color: #2D2C4D;
-  scrollbar-highlight-color: #7D7E94;
-  scrollbar-3dlight-color: #7D7E94;
-  scrollbar-darkshadow-color: #2D2C4D;
-  scrollbar-track-color: #7D7E94;
-  scrollbar-arrow-color: #C1C1D1; }
-
 @font-face {
   font-family: "Ubuntu-Regular";
   src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf); }
@@ -88,7 +79,8 @@ body {
 
 #page-content-wrapper {
   height: 100%;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 
 .map {
   position: relative;
@@ -383,14 +375,14 @@ body {
   width: 100%;
   z-index: 19999;
   height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  display: none; }
+  background: rgba(255, 255, 255, 0.8); }
 
 .modal-window-holder {
   margin: 0 auto;
   z-index: 10;
   height: 100%;
   overflow: hidden;
+  display: none;
   padding-top: 142px;
   padding-bottom: 142px;
   width: 100%;
@@ -406,16 +398,13 @@ body {
     .modal-window .mCustomScrollBox .mCSB_container {
       overflow: auto; }
     .modal-window .mCustomScrollBox .mCSB_scrollTools.mCSB_1_scrollbar {
-      top: -152px;
-      right: 42px;
       background: #6c6f74; }
       .modal-window .mCustomScrollBox .mCSB_scrollTools.mCSB_1_scrollbar .mCSB_draggerRail {
         background: #6c6f74; }
       .modal-window .mCustomScrollBox .mCSB_scrollTools.mCSB_1_scrollbar .mCSB_dragger_bar {
         background: #e6e6e8;
         border: 4px solid #e6e6e8;
-        border-radius: 0;
-        height: 30%; }
+        border-radius: 0; }
   .modal-window .nav.nav-tabs {
     z-index: 39999; }
     .modal-window .nav.nav-tabs li.active a {
@@ -444,6 +433,132 @@ body {
     .tabpanel .nav.nav-tabs li {
       float: none;
       display: inline-block; }
+
+.tablesettings-holder {
+  width: 60rem;
+  display: block;
+  height: 34rem;
+  margin: 10% auto;
+  position: relative;
+  border-left: 1px solid #e1e2e4;
+  border-right: 1px solid #e1e2e4;
+  background-color: #ebedf2;
+  box-shadow: 0 2px 1px #b5b5b8;
+  box-sizing: border-box;
+  padding: 73px 84px 0 84px; }
+  .tablesettings-holder .w-icon {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .tablesettings-holder .cols-holder .col-md-6 .inner-wrapper {
+    border-color: #bbbfc9;
+    border-top: 1px solid;
+    border-bottom: 1px solid; }
+    .tablesettings-holder .cols-holder .col-md-6 .inner-wrapper h2 {
+      font: 14px "Ubuntu-Medium"; }
+  .tablesettings-holder .results-holder {
+    max-height: 398px;
+    height: 396px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    position: relative;
+    z-index: 200; }
+    .tablesettings-holder .results-holder .result {
+      min-height: 42px;
+      margin-bottom: 6px; }
+  .tablesettings-holder #searchquery {
+    width: 364px;
+    height: 24px;
+    background-color: #fff;
+    border: 0;
+    z-index: 201;
+    position: absolute;
+    top: 15px;
+    box-shadow: 0 0 2px #dddfe4; }
+  .tablesettings-holder .table-cols {
+    height: 398px;
+    max-height: 398px; }
+  .tablesettings-holder .table-cols > h2 {
+    padding-left: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .tablesettings-holder #sortable-columns li {
+    height: 23px;
+    border-bottom: 1px solid #fff;
+    font-family: "Ubuntu-Regular";
+    line-height: 23px;
+    font-size: 12px; }
+  .tablesettings-holder #sortable-columns i.fa.fa-sort {
+    color: #b5b8be;
+    margin-left: 6px;
+    margin-right: 16px; }
+  .tablesettings-holder #sortable-columns .misc .fa.fa-sort-amount-desc {
+    font-size: 14px;
+    height: 10px;
+    overflow: hidden;
+    transform: rotate(180deg);
+    width: 16px;
+    text-indent: -7px;
+    margin-right: 8px; }
+  .tablesettings-holder #sortable-columns .misc .fa.fa-sort-amount-asc {
+    font-size: 14px;
+    height: 10px;
+    overflow: hidden;
+    width: 16px;
+    text-indent: -7px; }
+  .tablesettings-holder #sortable-columns .misc .fa.fa-eye.pull-right {
+    margin-left: 0;
+    position: relative;
+    top: 5px; }
+  .tablesettings-holder #sortable-columns b.depth-level {
+    display: inline-block;
+    width: 16px;
+    top: 4px;
+    height: 16px;
+    position: relative; }
+    .tablesettings-holder #sortable-columns b.depth-level.black::after {
+      background-color: #2e3033; }
+    .tablesettings-holder #sortable-columns b.depth-level.grey::after {
+      background-color: #7a7c7f; }
+    .tablesettings-holder #sortable-columns b.depth-level::after {
+      content: '';
+      width: 2px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -2px;
+      margin-top: -2px; }
+
+.ui-widget-content {
+  border: 1px solid #aaaaaa;
+  background: #ffffff;
+  color: #222222;
+  z-index: 99999; }
+
+.ui-menu .ui-menu-item {
+  position: relative;
+  margin: 0;
+  padding: 3px 1em 3px .4em;
+  cursor: pointer;
+  min-height: 0; }
+
+.ui-widget {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.1em; }
+
+.ui-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  outline: none; }
+
+.ui-autocomplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default; }
 
 .panel-bottom {
   min-height: 18rem;
@@ -684,6 +799,18 @@ body {
         position: absolute; }
       .panel-bottom .fancypanel .log .ui-state-hover {
         border: 0; }
+      .panel-bottom .fancypanel .log .ui-jqgrid-htable th {
+        text-transform: uppercase;
+        font-family: "Ubuntu-Bold";
+        padding: 0;
+        padding-right: .5rem;
+        border-bottom: 0;
+        font-size: 13px; }
+        .panel-bottom .fancypanel .log .ui-jqgrid-htable th .ui-jqgrid-sortable {
+          padding-bottom: 10px;
+          border-bottom: .1rem solid #bbbfc9; }
+        .panel-bottom .fancypanel .log .ui-jqgrid-htable th:first-child .ui-jqgrid-sortable {
+          border-bottom: 0; }
       .panel-bottom .fancypanel .log table.table-custom-1 {
         font-family: "Ubuntu-Regular";
         width: 100%;
@@ -1276,6 +1403,15 @@ body {
     color: #fff;
     background-color: #2e3033; }
 
+.table-settings {
+  background: url(../images/table-menu.png) no-repeat center center;
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  right: -7px;
+  top: 15px;
+  position: absolute; }
+
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background: #ddd;
   border: 1px solid #ddd; }
@@ -1670,6 +1806,10 @@ body.generic {
 .m-null {
   margin: 0; }
 
+.m-center {
+  margin-right: auto;
+  margin-left: auto; }
+
 .select2 {
   border-radius: 0;
   font-size: 12px;
@@ -1697,6 +1837,9 @@ body.generic {
 
 .select2-container--default .select2-selection--single {
   border: 0; }
+
+.inner-wrapper {
+  position: relative; }
 
 .p-t-22 {
   padding-top: 1.375rem; }

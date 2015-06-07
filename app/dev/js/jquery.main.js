@@ -86,7 +86,7 @@ jQuery(document).ready(function() {
 				var previewholder = $("#page-content-wrapper").find(".preview"); // Находим ее в DOM
 				$(this).on("mousemove", function(e)
 				{
-					previewholder.css({left: e.pageX+"px", top: e.pageY+"px"});
+					previewholder.css({left: (e.pageX+20)+"px", top: (e.pageY+10)+"px"});
 				});
 			}).bind("mouseleave", function()
 			{
@@ -99,12 +99,7 @@ jQuery(document).ready(function() {
 	}); // jqGrid на табличку
 	coordHl(".i-coords"); // подсвечиваем инпуты с координатами 
 
-	jQuery('#mo-table td>a').bind("click", function(e)
-      {
-        e.preventDefault();
-        $(".modal-overlay").fadeIn("slow");
-        return 
-      });
+	
 
 	$(".btn-square.btn-grey.btn-menu").click(function(e) {
 		e.preventDefault();
@@ -121,11 +116,59 @@ jQuery(document).ready(function() {
 			map.width(mapW+268);
 		}
 	});
+
+	$('#mo-table td>a').bind("click", function(e)
+      {
+        e.preventDefault();
+        $(".modal-overlay").fadeIn("slow");
+        $(".modal-window-holder").fadeIn("slow");
+        return 
+      });
+
 	$(".window-close.w-icon").bind("click", function(e)
 	{
 		e.preventDefault();
+		$(".modal-window-holder").fadeOut("slow");
 		$(".modal-overlay").fadeOut("slow");
 	});
+	$(".table-settings").bind("click", function(e)
+	{
+		e.preventDefault();
+		$(".modal-overlay").fadeIn("slow");
+		$(".tablesettings-holder").fadeIn("slow");
+	});
+
+	$(".results-holder").mCustomScrollbar();
+	$("#sortable-columns").sortable();
+	var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+	$("#searchquery").autocomplete({
+		source: availableTags
+	});
+
+	
 });
 
 function meterCounter()

@@ -356,6 +356,30 @@
             {
                 border: 0;
             }
+            .ui-jqgrid-htable
+            {
+                th
+                {
+                    text-transform: uppercase;
+                    font-family: "Ubuntu-Bold";
+                    padding: 0;
+                    padding-right: .5rem;
+                    border-bottom: 0;
+                    font-size: 13px; 
+                    .ui-jqgrid-sortable
+                    {
+                        padding-bottom: 10px;
+                        border-bottom: .1rem solid #bbbfc9;
+                    }
+                    &:first-child
+                    {
+                        .ui-jqgrid-sortable
+                        {
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
             table.table-custom-1
             {
                 font-family:    "Ubuntu-Regular";

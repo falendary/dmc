@@ -326,6 +326,16 @@
 	}
 }
 
+.table-settings // Кнопка настройка таблички
+{
+	background: url(../images/table-menu.png) no-repeat center center;
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	right: -7px;
+	top: 15px;
+	position: absolute;
+}
 //*******************//
 // КНОПКИ	КОНЕЦ    //
 //*******************//
@@ -660,6 +670,7 @@ body.generic
 	.m-right-40{margin-right: 2.5rem;}
 
 .m-null{margin: 0;};
+.m-center{margin-right: auto; margin-left: auto;}
 
 // Кастомизация select2
 
@@ -705,4 +716,8 @@ body.generic
 .select2-container--default .select2-selection--single
 {
 	border: 0;	
+}
+.inner-wrapper
+{
+	position: relative;
 }

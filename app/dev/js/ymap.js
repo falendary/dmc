@@ -137,6 +137,7 @@ init = function() {
       {
         e.preventDefault();
         $(".modal-overlay").fadeIn("slow");
+        $(".modal-window-holder").fadeIn("slow");
         return false;
       });
       jQuery(".holder-bull .item").each(function()
